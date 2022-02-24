@@ -10,6 +10,15 @@ import { CalendarComponent } from './views/calendar/calendar.component';
 import { CoursesComponent } from './views/courses/courses.component';
 import { PrivateFilesComponent } from './views/private-files/private-files.component';
 import { ParticipantsComponent } from './views/participants/participants.component';
+import { ClassComponent } from './views/class/class.component';
+import { MessagesComponent } from './views/messages/messages.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { GradesComponent } from './views/grades/grades.component';
+import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +29,20 @@ import { ParticipantsComponent } from './views/participants/participants.compone
     CalendarComponent,
     CoursesComponent,
     PrivateFilesComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    ClassComponent,
+    MessagesComponent,
+    SettingsComponent,
+    GradesComponent,
+    SidebarRightComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule
     
   ],
   providers: [],
