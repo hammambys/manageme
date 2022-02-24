@@ -10,3 +10,10 @@
 .demo-inline-calendar-card {
   width: 300px;
 }
+.upcoming {
+  margin-top: 20px;
+}
+.upcoming-head {
+  display: flex;
+  justify-content: space-between;
+}
