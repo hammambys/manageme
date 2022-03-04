@@ -6,12 +6,7 @@
   display: flex;
   justify-content: space-between;
 }
-.class {
-  background-color: blanchedalmond;
-  width: 100%;
-  margin: 10px;
-  text-align: center;
-}
+
 .task {
   display: flex;
   justify-content: space-between;

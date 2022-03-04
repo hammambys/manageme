@@ -18,6 +18,7 @@ import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ClassCardComponent } from './components/class-card/class-card.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MessagesComponent,
     SettingsComponent,
     GradesComponent,
-    SidebarRightComponent
+    SidebarRightComponent,
+    ClassCardComponent
   ],
   imports: [
     BrowserModule,
