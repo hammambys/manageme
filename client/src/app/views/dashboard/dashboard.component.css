@@ -1,3 +1,16 @@
+main {
+  background-color: gainsboro;
+  padding: 2rem;
+}
+header h1 {
+  font-weight: bold;
+}
+header p {
+  color: gray;
+}
+section {
+  margin: 2rem 0;
+}
 .classes {
   display: flex;
   justify-content: space-around;

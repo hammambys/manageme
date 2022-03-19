@@ -1,55 +1,132 @@
-<div>
-    <header>
-        <h1>Hi, User</h1>
-        <p>Welcome back, nice to see you again!</p>
-    </header>
-    <section>
-        <h2>Semester's Grade</h2>  
-    </section>
-    <section>
-        <div class="classes-head">
-            <h2>My Classes</h2> 
-            
-                <a href="">See all ></a>
-            
+<main>
+  <header>
+    <h1>Hi, User 👋</h1>
+    <p>Welcome back, nice to see you again!</p>
+  </header>
+  <section>
+    <h2>Semester's Grade</h2>
+    <img src="../../../assets/images/graph.jpg" alt="graph" />
+  </section>
+  <section>
+    <div class="classes-head">
+      <h2>My Classes</h2>
 
-        </div>
-        <div class="classes">
-            <app-class-card></app-class-card>
-            <app-class-card></app-class-card>
-        </div>
-        
-    </section>
-    <section>
-        <h2>Today Tasks</h2> 
-        <div>
-            <ul>
-                <a href="">
-                    <li class="task">
-                        <div class="task-name">Task 1</div>
-                        <div class="task-course">Course 1</div>
-                        <div class="task-date">Date</div>
-                        <div class="done">done</div>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="task">
-                        <div class="task-name">Task 1</div>
-                        <div class="task-course">Course 1</div>
-                        <div class="task-date">Date</div>
-                        <div class="done">done</div>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="task">
-                        <div class="task-name">Task 1</div>
-                        <div class="task-course">Course 1</div>
-                        <div class="task-date">Date</div>
-                        <div class="done">done</div>
-                    </li>
-                </a>
-                
-            </ul>
-        </div> 
-    </section>
-</div>
+      <a href="">See all ></a>
+    </div>
+    <div class="classes">
+      <app-class-card></app-class-card>
+      <app-class-card></app-class-card>
+    </div>
+  </section>
+  <section>
+    <h2>Today Tasks</h2>
+    <div>
+      <ul>
+        <li class="task">
+          <div class="task-name">Task 1</div>
+          <div class="task-course">Course 1</div>
+          <div class="task-date">Date</div>
+          <div class="done">done</div>
+          <div class="menu">
+            <button
+              mat-icon-button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </li>
+        <li class="task">
+          <div class="task-name">Task 1</div>
+          <div class="task-course">Course 1</div>
+          <div class="task-date">Date</div>
+          <div class="done">done</div>
+
+          <div class="menu">
+            <button
+              mat-icon-button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </li>
+        <li class="task">
+          <div class="task-name">Task 1</div>
+          <div class="task-course">Course 1</div>
+          <div class="task-date">Date</div>
+          <div class="done">done</div>
+
+          <div class="menu">
+            <button
+              mat-icon-button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>

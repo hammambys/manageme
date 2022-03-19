@@ -1,38 +1,40 @@
-<div>
-    <div class="top">
-        <div class="element search">
-            <input id="search" name="search" type="text" class="search-input" placeholder="Search">
-            
-        </div>
-        <div class="element notification">
-            <a href="">
-                <img src="../../../assets/notification.png" alt="">
-            </a>
-        </div>
-        <div class="element profil">
-            <a href="">
-                <img src="../../../assets/profil.png" alt="picture">
-
-            </a>
-
-        </div>
+<main>
+  <div class="top">
+    <div class="element search">
+      <input
+        id="search"
+        name="search"
+        type="text"
+        class="search-input"
+        placeholder="Search"
+      />
     </div>
-    <section class="calendar">
-        <h2>Calender</h2>
-        <mat-card>
-            <mat-calendar></mat-calendar>
-        </mat-card>
-    </section>
-    <section class="upcoming">
-        <div class="upcoming-head">
-            <h2>Upcoming</h2>
-            <select name="days" id="days">
-                <option value="Today">Today</option>
-                <option value="Tomorrow">Tomorrow</option>
-
-            </select>
-
-        </div>
-
-    </section>
-</div>
+    <div class="element notification">
+      <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      <!-- Include text description of the icon's meaning for screen-readers -->
+      <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span>
+    </div>
+    <div class="element profil">
+      <a href="">
+        <img src="../../../assets/profil.png" alt="picture" />
+      </a>
+    </div>
+  </div>
+  <section class="calendar">
+    <h2>Calender</h2>
+    <mat-card>
+      <mat-calendar></mat-calendar>
+    </mat-card>
+  </section>
+  <section class="upcoming">
+    <div class="upcoming-head">
+      <h2>Upcoming</h2>
+      <select name="days" id="days">
+        <option value="Today">Today</option>
+        <option value="Tomorrow">Tomorrow</option>
+      </select>
+    </div>
+  </section>
+</main>
