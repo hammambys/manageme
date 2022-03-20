@@ -1,5 +1,9 @@
 main {
-  background-color: rgb(236, 234, 234);
+  background-color: var(--fourth);
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  width: 100%;
 }
 .brand {
   font-size: x-large;
