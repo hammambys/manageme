@@ -1,15 +1,32 @@
-main {
-  background-color: var(--primary);
-  padding: 2rem;
-}
-header h1 {
+h1,
+h2,
+h3 {
   font-weight: bold;
 }
+
 header p {
   color: gray;
 }
 section {
   margin: 2rem 0;
+}
+.sem-grade {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--second);
+  padding: 1.5rem;
+}
+.sem-grade .graph {
+  background-color: var(--fourth);
+}
+.sem-grade .graph img {
+  max-width: 30rem;
+}
+.sem-grade .summary {
+  background-color: var(--fourth);
+}
+.sem-grade .summary .summary-top {
+  display: flex;
 }
 .classes {
   display: flex;

@@ -2,67 +2,84 @@
   <div class="row">
     <div class="brand">
       <a href="/dashboard">
-        <span class="brand-text">ManageMe</span>
+        <span class="brand-text"
+          >Manage<span style="color: var(--primary)">Me</span></span
+        >
       </a>
     </div>
-
-    <hr />
     <ul class="list">
+      <li class="list-item active">
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/dashboard.png"
+            alt="dashboard icon"
+          />
+          <p>Dashboard</p>
+        </a>
+      </li>
       <li class="list-item">
-        <a
-          routerLink="/dashboard"
-          class="nav-link link-dark"
-          routerLinkActive="active"
-        >
-          Dashboard
+        <a routerLink="/class" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/dashboard.png"
+            alt="class icon"
+          />
+          <p>Class</p>
         </a>
       </li>
 
       <li class="list-item">
-        <a
-          routerLink="/class"
-          class="nav-link link-dark"
-          routerLinkActive="active"
-        >
-          Class
-        </a>
-      </li>
-
-      <li class="list-item">
-        <a
-          routerLink="/schedule"
-          class="nav-link link-dark"
-          routerLinkActive="active"
-        >
-          Schedule
+        <a routerLink="/schedule" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/class.png"
+            alt="schedule icon"
+          />
+          <p>Schedule</p>
         </a>
       </li>
       <li class="list-item">
-        <a
-          routerLink="/groups"
-          class="nav-link link-dark"
-          routerLinkActive="active"
-        >
-          Groups
+        <a routerLink="/groups" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/people.png"
+            alt="Groups icon"
+          />
+          <p>Groups</p>
         </a>
       </li>
       <li class="list-item">
-        <a routerLink="/grades"> Grades </a>
+        <a routerLink="/grades" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/grades.png"
+            alt="grades icon"
+          />
+          <p>Grades</p>
+        </a>
       </li>
       <li class="list-item">
-        <a routerLink="/messages"> Messages </a>
+        <a routerLink="/messages" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/email.png"
+            alt="messages icon"
+          />
+          <p>Messages</p>
+        </a>
       </li>
       <li class="list-item">
-        <a
-          routerLink="/settings"
-          class="nav-link link-dark"
-          routerLinkActive="active"
-        >
-          Settings
+        <a routerLink="/settings" routerLinkActive="active">
+          <img
+            class="list-icon"
+            src="../../../assets/images/icons/setting.png"
+            alt="settings icon"
+          />
+          <p>Settings</p>
         </a>
       </li>
     </ul>
-    <hr />
     <div class="logout">
       <a href="/logout">Log out</a>
     </div>

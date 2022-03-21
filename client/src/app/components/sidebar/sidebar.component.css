@@ -16,14 +16,30 @@ main {
   list-style-type: none;
 }
 .list-item {
+  margin-bottom: 2px;
   padding: 15px;
+  border-radius: 10px;
+}
+.list-item.active {
+  background-color: #ebb6a8;
+  border-right: 4px solid var(--primary);
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.list-item:hover {
+  background-color: #ebb6a8;
 }
 .list-item a {
-  font-weight: bold;
-  color: black;
+  display: flex;
 }
+.list-item a .list-icon {
+  margin-right: 1rem;
+}
+
 .logout {
   padding: 20px;
+  position: absolute;
+  bottom: 0;
 }
 .logout a {
   color: black;

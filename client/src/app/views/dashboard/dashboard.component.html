@@ -1,16 +1,46 @@
-<main>
+<main class="middle">
   <header>
     <h1>Hi, User 👋</h1>
     <p>Welcome back, nice to see you again!</p>
   </header>
-  <section>
-    <h2>Semester's Grade</h2>
-    <img src="../../../assets/images/graph.jpg" alt="graph" />
+  <section class="sem-grade">
+    <div class="graph">
+      <h2>Semester's Grade</h2>
+      <img src="../../../assets/images/graph.jpg" alt="graph" />
+    </div>
+    <div class="summary">
+      <div class="summary-top">
+        <h3>Summary</h3>
+        <div class="menu">
+          <button
+            mat-icon-button
+            style="background-color: transparent; border: none; cursor: pointer"
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
   </section>
   <section>
     <div class="classes-head">
       <h2>My Classes</h2>
-
       <a href="">See all ></a>
     </div>
     <div class="classes">
