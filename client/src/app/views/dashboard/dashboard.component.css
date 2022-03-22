@@ -14,31 +14,69 @@ section {
   display: flex;
   justify-content: space-between;
   background-color: var(--second);
-  padding: 1.5rem;
+  padding: 1rem;
+}
+.sem-grade p {
+  margin: 0;
 }
 .sem-grade .graph {
-  background-color: var(--fourth);
 }
 .sem-grade .graph img {
-  max-width: 30rem;
+  max-width: 10rem;
 }
 .sem-grade .summary {
   background-color: var(--fourth);
 }
 .sem-grade .summary .summary-top {
   display: flex;
+  justify-content: space-between;
 }
-.classes {
+.sem-grade .summary {
+  padding: 1.5rem;
+}
+.sem-grade .summary .summary-body {
+  padding: 0;
+}
+.sem-grade .summary .summary-body .summary-item {
+  display: flex;
+  height: 32px;
+  margin: 1rem 0;
+}
+.sem-grade .summary .summary-body .summary-item .col {
+  padding-left: 1rem;
+}
+
+.classes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.classes-head a {
+  color: var(--primary);
+}
+
+.classes-body {
   display: flex;
   justify-content: space-around;
 }
-.classes-head {
-  display: flex;
-  justify-content: space-between;
-}
 
+.tasks-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.tasks-head h2 {
+  margin: 0;
+  margin-right: 1rem;
+}
+.tasks-head .results {
+  text-align: center;
+}
 .task {
   display: flex;
   justify-content: space-between;
   padding: 9px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border-radius: 10px;
 }

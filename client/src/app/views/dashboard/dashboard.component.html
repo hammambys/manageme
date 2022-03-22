@@ -36,26 +36,52 @@
           </mat-menu>
         </div>
       </div>
+      <div class="summary-body">
+        <div class="summary-item">
+          <img src="../../../assets/images/icons/etoile.png" alt="" />
+          <div class="col">
+            <p>3.20</p>
+            <p class="gray-text">GPA</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <img src="../../../assets/images/icons/etoile.png" alt="" />
+          <div class="col">
+            <p>490</p>
+            <p class="gray-text">Total Grade</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <img src="../../../assets/images/icons/etoile.png" alt="" />
+          <div class="col">
+            <p>137</p>
+            <p class="gray-text">Total Credit</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <section>
+  <section class="classes">
     <div class="classes-head">
       <h2>My Classes</h2>
       <a href="">See all ></a>
     </div>
-    <div class="classes">
+    <div class="classes-body">
       <app-class-card></app-class-card>
       <app-class-card></app-class-card>
     </div>
   </section>
-  <section>
-    <h2>Today Tasks</h2>
+  <section class="tasks">
+    <div class="tasks-head">
+      <h2>Today Tasks</h2>
+      <div class="results gray-text">3 results</div>
+    </div>
     <div>
-      <ul>
-        <li class="task">
+      <div>
+        <div class="task">
           <div class="task-name">Task 1</div>
-          <div class="task-course">Course 1</div>
-          <div class="task-date">Date</div>
+          <div class="task-course gray-text">Course 1</div>
+          <div class="task-date gray-text">Date</div>
           <div class="done">done</div>
           <div class="menu">
             <button
@@ -85,46 +111,11 @@
               </button>
             </mat-menu>
           </div>
-        </li>
-        <li class="task">
+        </div>
+        <div class="task">
           <div class="task-name">Task 1</div>
-          <div class="task-course">Course 1</div>
-          <div class="task-date">Date</div>
-          <div class="done">done</div>
-
-          <div class="menu">
-            <button
-              mat-icon-button
-              style="
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-              "
-              [matMenuTriggerFor]="menu"
-              aria-label="Example icon-button with a menu"
-            >
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon>dialpad</mat-icon>
-                <span>Redial</span>
-              </button>
-              <button mat-menu-item disabled>
-                <mat-icon>voicemail</mat-icon>
-                <span>Check voice mail</span>
-              </button>
-              <button mat-menu-item>
-                <mat-icon>notifications_off</mat-icon>
-                <span>Disable alerts</span>
-              </button>
-            </mat-menu>
-          </div>
-        </li>
-        <li class="task">
-          <div class="task-name">Task 1</div>
-          <div class="task-course">Course 1</div>
-          <div class="task-date">Date</div>
+          <div class="task-course gray-text">Course 1</div>
+          <div class="task-date gray-text">Date</div>
           <div class="done">done</div>
 
           <div class="menu">
@@ -155,8 +146,43 @@
               </button>
             </mat-menu>
           </div>
-        </li>
-      </ul>
+        </div>
+        <div class="task">
+          <div class="task-name">Task 1</div>
+          <div class="task-course gray-text">Course 1</div>
+          <div class="task-date gray-text">Date</div>
+          <div class="done">done</div>
+
+          <div class="menu">
+            <button
+              mat-icon-button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Check voice mail</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Disable alerts</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
