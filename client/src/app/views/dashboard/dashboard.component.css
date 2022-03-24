@@ -12,7 +12,6 @@ section {
 }
 .sem-grade {
   display: flex;
-  justify-content: space-between;
   background-color: var(--second);
   padding: 1rem;
 }
@@ -20,6 +19,7 @@ section {
   margin: 0;
 }
 .sem-grade .graph {
+  width: 100%;
 }
 .sem-grade .graph img {
   max-width: 10rem;

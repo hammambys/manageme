@@ -4,9 +4,10 @@
   </div>
   <main class="middle">
     <h1>Schedule</h1>
-    <mat-card class="calendar-card">
+    <div class="calendar-container">
       <mat-calendar class="calendar" [(selected)]="selected"></mat-calendar>
-    </mat-card>
+    </div>
+
     <p>Selected date: {{ selected }}</p>
   </main>
   <div class="col">

@@ -23,6 +23,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { HomeComponent } from './views/home/home.component';
+import { NgChartsModule } from 'ng2-charts';
+import { GraphComponent } from './components/graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { MatTableModule } from '@angular/material/table';
     GroupsComponent,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
+    GraphComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { MatTableModule } from '@angular/material/table';
     MatIconModule,
     MatMenuModule,
     MatTableModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

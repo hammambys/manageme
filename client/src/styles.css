@@ -38,3 +38,15 @@ ul {
   background-color: var(--third);
   padding: 2rem;
 }
+.mat-calendar-body-cell-content,
+.mat-calendar-body-label,
+.mat-calendar-table-header {
+  color: black !important;
+}
+.mat-calendar {
+  background-color: #fff;
+  margin: 5px;
+}
+.mat-calendar-body-selected {
+  background-color: var(--primary);
+}
