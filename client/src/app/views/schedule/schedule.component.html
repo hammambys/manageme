@@ -1,6 +1,15 @@
-<main class="middle">
-  <h1>Schedule</h1>
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar></mat-calendar>
-  </mat-card>
-</main>
+<div class="main-app">
+  <div class="col">
+    <app-sidebar></app-sidebar>
+  </div>
+  <main class="middle">
+    <h1>Schedule</h1>
+    <mat-card class="calendar-card">
+      <mat-calendar class="calendar" [(selected)]="selected"></mat-calendar>
+    </mat-card>
+    <p>Selected date: {{ selected }}</p>
+  </main>
+  <div class="col">
+    <app-sidebar-right></app-sidebar-right>
+  </div>
+</div>

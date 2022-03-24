@@ -15,12 +15,12 @@ main {
 .list {
   list-style-type: none;
 }
-.list-item {
+.list-item a {
   margin-bottom: 2px;
   padding: 15px;
   border-radius: 10px;
 }
-.list-item.active {
+.active {
   background-color: #ebb6a8;
   border-right: 4px solid var(--primary);
   border-top-right-radius: 0%;
@@ -28,6 +28,7 @@ main {
 }
 .list-item:hover {
   background-color: #ebb6a8;
+  border-radius: 10px;
 }
 .list-item a {
   display: flex;

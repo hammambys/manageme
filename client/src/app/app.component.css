@@ -1,11 +1,1 @@
-* {
-  font-weight: bold;
-}
-.main-app {
-  display: grid;
-  grid-template-columns: 20% 55% 25%;
-}
-.middle {
-  background-color: var(--third);
-  padding: 2rem;
-}
+

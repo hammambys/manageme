@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Components
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { ClassComponent } from './views/class/class.component';
@@ -13,6 +14,9 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { GradesComponent } from './views/grades/grades.component';
 import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.component';
 import { ClassCardComponent } from './components/class-card/class-card.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+// Angular material
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -33,6 +37,8 @@ import { MatTableModule } from '@angular/material/table';
     ClassCardComponent,
     ScheduleComponent,
     GroupsComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

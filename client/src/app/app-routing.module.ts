@@ -7,6 +7,8 @@ import { GroupsComponent } from './views/groups/groups.component';
 import { MessagesComponent } from './views/messages/messages.component';
 import { ScheduleComponent } from './views/schedule/schedule.component';
 import { SettingsComponent } from './views/settings/settings.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'grades', component: GradesComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'settings', component: SettingsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
