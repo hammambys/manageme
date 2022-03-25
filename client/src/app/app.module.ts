@@ -14,6 +14,7 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { GradesComponent } from './views/grades/grades.component';
 import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.component';
 import { ClassCardComponent } from './components/class-card/class-card.component';
+import { GroupCardComponent } from './components/group-card/group-card.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 // Angular material
@@ -26,7 +27,6 @@ import { MatTableModule } from '@angular/material/table';
 import { HomeComponent } from './views/home/home.component';
 import { NgChartsModule } from 'ng2-charts';
 import { GraphComponent } from './components/graph/graph.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +38,14 @@ import { GraphComponent } from './components/graph/graph.component';
     GradesComponent,
     SidebarRightComponent,
     ClassCardComponent,
+    GroupCardComponent,
     ScheduleComponent,
     GroupsComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
     GraphComponent,
+    GroupCardComponent,
   ],
   imports: [
     BrowserModule,
