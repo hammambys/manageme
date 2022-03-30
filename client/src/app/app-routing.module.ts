@@ -10,9 +10,10 @@ import { ScheduleComponent } from './views/schedule/schedule.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'class', component: ClassComponent },
   { path: 'groups', component: GroupsComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

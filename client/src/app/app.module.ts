@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -29,6 +30,11 @@ import { MatTableModule } from '@angular/material/table';
 import { HomeComponent } from './views/home/home.component';
 import { NgChartsModule } from 'ng2-charts';
 import { GraphComponent } from './components/graph/graph.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,6 +53,10 @@ import { GraphComponent } from './components/graph/graph.component';
     RegisterComponent,
     HomeComponent,
     GraphComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,8 +70,9 @@ import { GraphComponent } from './components/graph/graph.component';
     MatTableModule,
     NgChartsModule,
     HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
