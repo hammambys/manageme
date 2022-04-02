@@ -1,0 +1,43 @@
+<div class="class">
+  <div class="class-header">
+    <div class="class-img">
+      <img src="../../../assets/images/pc.png" alt="class image" />
+    </div>
+    <div>
+      <h3>Group 1</h3>
+    </div>
+    <div class="menu">
+      <button
+        mat-icon-button
+        style="background-color: transparent; border: none; cursor: pointer"
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="class-body">
+    <p class="gray-text">Niveau</p>
+    <p class="gray-text">Nombre de participants</p>
+  </div>
+  <div class="class-footer">
+    <button (click)="Toggletag()">Show Grades</button>
+    <app-grade-table *ngIf="ShowMe"></app-grade-table>
+  </div>
+</div>

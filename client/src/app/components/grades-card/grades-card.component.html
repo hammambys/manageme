@@ -1,0 +1,42 @@
+<div class="class">
+  <div class="class-header">
+    <div class="class-img">
+      <img src="../../../assets/images/pc.png" alt="class image" />
+    </div>
+    <div>
+      <h3>Module 1</h3>
+      <p class="gray-text">Instructeur 1</p>
+    </div>
+    <div class="menu">
+      <button
+        mat-icon-button
+        style="background-color: transparent; border: none; cursor: pointer"
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="class-footer">
+    <button (click)="Toggletag()">Show Groups</button>
+    <app-mini-group-card *ngIf="ShowMe"></app-mini-group-card>
+    <app-mini-group-card *ngIf="ShowMe"></app-mini-group-card>
+    <app-mini-group-card *ngIf="ShowMe"></app-mini-group-card>
+  </div>
+</div>

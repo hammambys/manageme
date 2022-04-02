@@ -35,6 +35,10 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { GroupCardComponent } from './components/group-card/group-card.component';
+import { GradeTableComponent } from './components/grade-table/grade-table.component';
+import { GradesCardComponent } from './components/grades-card/grades-card.component';
+import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,10 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    GroupCardComponent,
+    GradeTableComponent,
+    GradesCardComponent,
+    MiniGroupCardComponent,
   ],
   imports: [
     BrowserModule,
