@@ -1,2 +1,4 @@
-package com.example.demo.models;public class Inscription {
+package com.example.demo.models;
+
+public class Inscription {
 }
