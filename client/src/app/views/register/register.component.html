@@ -104,6 +104,8 @@
       Your registration is successful!
     </div>
     <hr />
-    <div class="form-footer"><a href="/login">Already have an account?</a></div>
+    <div class="form-footer" *ngIf="!isSuccessful">
+      <a href="/login">Already have an account?</a>
+    </div>
   </div>
 </div>

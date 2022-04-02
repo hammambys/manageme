@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-sidebar-right',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-right.component.css'],
 })
 export class SidebarRightComponent implements OnInit {
-  constructor() {}
+  username?: string;
 
-  ngOnInit(): void {}
+  constructor(private tokenStorageService: TokenStorageService) {}
+
+  ngOnInit(): void {
+    const user = this.tokenStorageService.getUser();
+    this.username = user.username;
+  }
 }

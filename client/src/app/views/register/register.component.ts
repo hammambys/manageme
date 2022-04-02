@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select/select';
+import { Router } from '@angular/router';
 import { AuthService } from '../../_services/auth.service';
 
 @Component({
@@ -15,7 +17,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -26,6 +28,9 @@ export class RegisterComponent implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 2000);
       },
       (err) => {
         this.errorMessage = err.error.message;
