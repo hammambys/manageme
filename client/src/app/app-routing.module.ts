@@ -11,6 +11,7 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { CourseDetailsComponent } from './views/course-details/course-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'course/:id', component: CourseDetailsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

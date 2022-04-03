@@ -8,6 +8,11 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 export class SidebarRightComponent implements OnInit {
   username?: string;
+  hidden = false;
+
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
 
   constructor(private tokenStorageService: TokenStorageService) {}
 

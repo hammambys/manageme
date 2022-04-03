@@ -3,7 +3,108 @@
     <app-sidebar></app-sidebar>
   </div>
   <main class="middle">
-    <p>messages works!</p>
+    <mat-drawer-container class="example-container">
+      <mat-drawer mode="side" opened
+        ><div class="container">
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Friends </mat-panel-title>
+              <mat-panel-description> ({{ nbFriends }}) </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-selection-list #friends [multiple]="false">
+              <mat-list-option
+                *ngFor="let friend of friendsList"
+                [value]="friend"
+              >
+                <img
+                  matListAvatar
+                  src="../../../assets/images/pc.png"
+                  alt="..."
+                />
+                {{ friend }}
+              </mat-list-option>
+            </mat-selection-list>
+            <p>
+              Option selected: {{ friends.selectedOptions.selected[0]?.value }}
+            </p>
+          </mat-expansion-panel>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Group </mat-panel-title>
+              <mat-panel-description> ({{ nbGroup }}) </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-selection-list #groups [multiple]="false">
+              <mat-list-option *ngFor="let group of groupList" [value]="group">
+                <img
+                  matListAvatar
+                  src="../../../assets/images/pc.png"
+                  alt="..."
+                />
+                {{ group }}
+              </mat-list-option>
+            </mat-selection-list>
+            <p>
+              Option selected: {{ groups.selectedOptions.selected[0]?.value }}
+            </p>
+          </mat-expansion-panel>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> Private </mat-panel-title>
+              <mat-panel-description> ({{ nbPrivate }}) </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-selection-list #private [multiple]="false">
+              <mat-list-option
+                *ngFor="let private of privateList"
+                [value]="private"
+              >
+                <img
+                  matListAvatar
+                  src="../../../assets/images/pc.png"
+                  alt="..."
+                />
+                {{ private }}
+              </mat-list-option>
+            </mat-selection-list>
+            <p>
+              Option selected: {{ private.selectedOptions.selected[0]?.value }}
+            </p>
+          </mat-expansion-panel>
+        </div></mat-drawer
+      >
+      <mat-drawer-content>
+        <mat-card class="card-msg">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+              <img
+                matListAvatar
+                src="../../../assets/images/pc.png"
+                alt="..."
+              />
+            </div>
+
+            <mat-card-title>friend1</mat-card-title>
+            <mat-card-subtitle>Online</mat-card-subtitle>
+          </mat-card-header>
+          <hr />
+          <mat-card-content class="card-content">
+            <p>Say hello !</p>
+          </mat-card-content>
+          <mat-card-actions class="card-footer">
+            <textarea></textarea>
+            <button mat-button>Send</button>
+          </mat-card-actions>
+        </mat-card></mat-drawer-content
+      >
+    </mat-drawer-container>
   </main>
   <div class="col">
     <app-sidebar-right></app-sidebar-right>
