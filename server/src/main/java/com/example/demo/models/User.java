@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
 @Entity
 @Table(	name = "users",
         uniqueConstraints = {
@@ -16,21 +17,37 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotBlank
     @Size(max = 20)
     private String username;
+
     @NotBlank
     @Size(max = 50)
     @Email
     private String email;
+
     @NotBlank
     @Size(max = 120)
     private String password;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "course_register",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "course_id") })
+    private Set<Course> courses = new HashSet<>();
+
+
     public User() {
     }
     public User(String username, String email, String password) {
@@ -68,4 +85,16 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
+        course.getUsers().add(this);
+    }
+
+    public void removeCourse(long courseId) {
+        Course course = this.courses.stream().filter(c -> c.getId() == courseId).findFirst().orElse(null);
+        if (course != null) this.courses.remove(course);
+        course.getUsers().remove(this);
+    }
 }
+

@@ -2,14 +2,21 @@ user
 user@gmail.com
 useruseruser
 
-
+{
+    "username":"user",
+    "password":"useruseruser"
+}
 
 admin
 admin@gmail.com
 admin123
 
-
-
 mod
 mod@gmail.com
 modmod
+
+{
+    "title":"course1",
+    "description":"test",
+    "published":false
+}

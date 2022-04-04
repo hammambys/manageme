@@ -1,9 +1,12 @@
 package com.example.demo.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Table(	name = "courses")
@@ -17,6 +20,17 @@ public class Course {
     private String description;
     @Column(name = "published")
     private boolean published;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "courses")
+    @JsonIgnore
+    private Set<User> users = new HashSet<>();
+
+
 
     public Course() {
     }
@@ -57,6 +71,14 @@ public class Course {
     public void setPublished(boolean published) {
         this.published = published;
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
 
     @Override
     public String toString() {
