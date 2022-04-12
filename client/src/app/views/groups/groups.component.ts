@@ -13,3 +13,4 @@ export class GroupsComponent implements OnInit {
   }
 
 }
+export class PaginatorOverviewExample {}

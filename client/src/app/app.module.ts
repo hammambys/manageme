@@ -27,6 +27,9 @@ import { MatTableModule } from '@angular/material/table';
 import { HomeComponent } from './views/home/home.component';
 import { NgChartsModule } from 'ng2-charts';
 import { GraphComponent } from './components/graph/graph.component';
+import { TestComponent } from './test/test.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,7 @@ import { GraphComponent } from './components/graph/graph.component';
     HomeComponent,
     GraphComponent,
     GroupCardComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,8 @@ import { GraphComponent } from './components/graph/graph.component';
     MatMenuModule,
     MatTableModule,
     NgChartsModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
