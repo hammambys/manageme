@@ -1,5 +1,7 @@
 package com.example.demo.payload.response;
 
+import com.example.demo.models.Group;
+
 import java.util.List;
 
 public class JwtResponse {
@@ -9,6 +11,7 @@ public class JwtResponse {
     private String username;
     private String email;
     private List<String> roles;
+
 
     public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
         this.token = accessToken;
@@ -61,4 +64,6 @@ public class JwtResponse {
     public List<String> getRoles() {
         return roles;
     }
+
+
 }

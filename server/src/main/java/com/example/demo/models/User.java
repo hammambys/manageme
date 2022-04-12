@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -37,23 +39,21 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            })
-    @JoinTable(name = "course_register",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "course_id") })
-    private Set<Course> courses = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    @JsonIgnore
+    private Group group;
+
 
 
     public User() {
     }
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password ) {
         this.username = username;
         this.email = email;
         this.password = password;
+
+
     }
     public Long getId() {
         return id;
@@ -85,16 +85,12 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-
-    public void addCourse(Course course) {
-        this.courses.add(course);
-        course.getUsers().add(this);
+    public Group getGroup() {
+        return group;
+    }
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
-    public void removeCourse(long courseId) {
-        Course course = this.courses.stream().filter(c -> c.getId() == courseId).findFirst().orElse(null);
-        if (course != null) this.courses.remove(course);
-        course.getUsers().remove(this);
-    }
 }
 

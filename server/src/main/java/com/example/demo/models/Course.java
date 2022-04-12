@@ -4,8 +4,6 @@ package com.example.demo.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 
 @Entity
@@ -21,23 +19,19 @@ public class Course {
     @Column(name = "published")
     private boolean published;
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "courses")
+    @ManyToOne
+    @JoinColumn(name = "group_id" ,referencedColumnName = "id")
     @JsonIgnore
-    private Set<User> users = new HashSet<>();
-
+    private Group group;
 
 
     public Course() {
     }
-    public Course(String title, String description, boolean published) {
+    public Course(String title, String description, boolean published,Group group ) {
         this.title = title;
         this.description = description;
         this.published = published;
+        this.group=group;
     }
 
     public Long getId() {
@@ -72,13 +66,14 @@ public class Course {
         this.published = published;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
-    public void setUsers(Set<User> users) {
-        this.users = users;
+
+    public Group getGroup() {
+        return group;
     }
 
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
     @Override
     public String toString() {
