@@ -2,34 +2,9 @@
   <div class="col">
     <app-sidebar></app-sidebar>
   </div>
-
   <main class="middle">
-    <mat-paginator
-              [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-            </mat-paginator>
     <app-group-card></app-group-card>
-
-    <!--<mdb-carousel [animation]="'slide'">
-
-      <mdb-carousel-item>
-        <app-group-card></app-group-card>
-      </mdb-carousel-item>
-
-      <mdb-carousel-item>
-        <app-group-card></app-group-card>
-      </mdb-carousel-item>
-
-      <mdb-carousel-item>
-        <app-group-card></app-group-card>
-      </mdb-carousel-item>
-
-    </mdb-carousel>-->
-
   </main>
-
   <div class="col">
     <app-sidebar-right></app-sidebar-right>
   </div>

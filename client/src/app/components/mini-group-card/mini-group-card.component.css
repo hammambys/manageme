@@ -1,0 +1,31 @@
+.class {
+    background-color: rgb(255, 255, 255);
+    margin: 50px;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 15px;
+  }
+  
+  .class-header {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .class-header h3 {
+    font-weight: bold;
+  }
+  
+  .class-body {
+    display: grid;
+    grid-template-columns: auto auto;
+    color: gray;
+    font-weight: 400;
+    padding-top: 1rem;
+    border-top: 1px solid gray;
+  }
+  .class-footer {
+    padding: 1rem;
+  }
+  .class-footer a {
+    color: var(--primary);
+  }

@@ -1,0 +1,46 @@
+{
+    "username":"user",
+    "password":"user123",
+    "email":"user@gmail.com",
+    "role":["user"],
+    "group_id":"1"
+}
+
+{
+    "username":"user",
+    "password":"user123"
+}
+
+{
+    "title":"course1",
+    "description":"course description1",
+    "published":true
+}
+
+admin
+admin@gmail.com
+admin123
+
+mod
+mod@gmail.com
+modmod
+
+{
+    "title":"course1",
+    "description":"test",
+    "published":false
+}
+
+
+
+
+ insert into group_list values(1,"MASTER_1","A");
+ insert into group_list values(2,"MASTER_2","A");
+ insert into group_list values(3,"ING_1","A");
+ insert into group_list values(4,"ING_2","A");
+ insert into group_list values(5,"ING_3","A");
+
+
+
+SET FOREIGN_KEY_CHECKS=0; DROP TABLE users; SET FOREIGN_KEY_CHECKS=1;
+
