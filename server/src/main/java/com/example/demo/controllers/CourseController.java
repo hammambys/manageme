@@ -3,8 +3,10 @@ package com.example.demo.controllers;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.models.Course;
+import com.example.demo.models.CourseMaterial;
 import com.example.demo.models.Group;
 import com.example.demo.models.User;
+import com.example.demo.repository.CourseMaterialRepository;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.UserRepository;
@@ -13,9 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -23,8 +23,6 @@ import java.util.Optional;
 public class CourseController {
     @Autowired
     CourseRepository courseRepository;
-    @Autowired
-    UserRepository userRepository;
     @Autowired
     GroupRepository groupRepository;
     @GetMapping("/courses")
@@ -57,7 +55,7 @@ public class CourseController {
     public ResponseEntity<Course> createCourse(@RequestBody Course course) {
         try {
             Course _course = courseRepository
-                    .save(new Course(course.getTitle(), course.getDescription(), course.isPublished(), course.getGroup()));
+                    .save(new Course(course.getTitle(), course.getDescription(), course.isPublished()));
 
             return new ResponseEntity<>(_course, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -112,7 +110,7 @@ public class CourseController {
     }
 
     @PostMapping("/courses/{courseId}/{groupId}")
-    public ResponseEntity<Course> assignCourseToGroup(@PathVariable(value = "courseId") Long courseId,
+    public ResponseEntity<Course> assignGroupToCourse(@PathVariable(value = "courseId") Long courseId,
                                                @PathVariable(value="groupId") Long groupId
     ) {
         Optional<Course> course = courseRepository.findById(courseId);
@@ -121,7 +119,9 @@ public class CourseController {
             Group _group=group.get();
             if (course.isPresent()) {
                 Course _course = course.get();
-                _course.setGroup(_group);
+                List<Group> groups =  _course.getGroups();
+                groups.add(_group);
+                _course.setGroups(groups);
                 return new ResponseEntity<>(courseRepository.save(_course), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -129,6 +129,5 @@ public class CourseController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
     }
 }

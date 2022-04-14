@@ -23,9 +23,6 @@ public class Group {
             cascade = CascadeType.ALL)
     private Set<User> users;
 
-    @OneToMany(mappedBy = "group")
-    private Set<Course> courses;
-
 
 
     public Group() {
@@ -68,11 +65,5 @@ public class Group {
         this.users = users;
     }
 
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
-    }
 
-    public Set<Course> getCourses() {
-        return courses;
-    }
 }
