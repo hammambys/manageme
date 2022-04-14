@@ -3,11 +3,12 @@
     <app-sidebar></app-sidebar>
   </div>
   <main class="middle">
-    <app-group-card></app-group-card>
-    <app-group-card></app-group-card>
-    <app-group-card></app-group-card>
-    <app-group-card></app-group-card>
-    <app-group-card></app-group-card>
+    <router-outlet></router-outlet>
+    <nav>
+      <h1></h1><a class="button" routerLink="/groups/groupe 1" routerLinkActive="activebutton">Group 1</a> 
+      <div></div>
+      <h1></h1><a class="button" routerLink="/groups/groupe 2" routerLinkActive="activebutton">Group 2</a>
+    </nav>
   </main>
   <div class="col">
     <app-sidebar-right></app-sidebar-right>

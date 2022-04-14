@@ -49,6 +49,8 @@ import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { Group2Component } from './views/group2/group2.component';
+import { Group1Component } from './views/group1/group1.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { MatButtonModule } from '@angular/material/button';
     GradesCardComponent,
     MiniGroupCardComponent,
     CourseDetailsComponent,
+    Group2Component,
+    Group1Component,
   ],
   imports: [
     BrowserModule,

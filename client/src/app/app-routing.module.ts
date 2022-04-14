@@ -12,6 +12,8 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
+import { Group1Component } from './views/group1/group1.component';
+import { Group2Component } from './views/group2/group2.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'course/:id', component: CourseDetailsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: 'groups/groupe 1', component: Group1Component},
+  {path: 'groups/groupe 2', component: Group2Component},
 ];
 
 @NgModule({
