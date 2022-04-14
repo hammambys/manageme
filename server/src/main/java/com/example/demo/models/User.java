@@ -44,6 +44,9 @@ public class User {
     @JsonIgnore
     private Group group;
 
+    @OneToOne(mappedBy = "user")
+    private Student student;
+
 
 
     public User() {

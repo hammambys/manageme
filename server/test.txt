@@ -25,11 +25,7 @@ mod
 mod@gmail.com
 modmod
 
-{
-    "title":"course1",
-    "description":"test",
-    "published":false
-}
+
 
 
 
@@ -42,5 +38,5 @@ modmod
 
 
 
-SET FOREIGN_KEY_CHECKS=0; DROP TABLE users; SET FOREIGN_KEY_CHECKS=1;
+SET FOREIGN_KEY_CHECKS=0; DROP TABLE bebebe; SET FOREIGN_KEY_CHECKS=1;
 
