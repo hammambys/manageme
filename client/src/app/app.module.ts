@@ -36,9 +36,12 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { GroupCardComponent } from './components/group-card/group-card.component';
-import { GradeTableComponent } from './components/grade-table/grade-table.component';
 import { GradesCardComponent } from './components/grades-card/grades-card.component';
 import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
+import { GradesTableComponent } from './components/grades-table/grades-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DsCardComponent } from './components/ds-card/ds-card.component';
 
 @NgModule({
   declarations: [
@@ -62,9 +65,10 @@ import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-
     BoardModeratorComponent,
     BoardUserComponent,
     GroupCardComponent,
-    GradeTableComponent,
     GradesCardComponent,
     MiniGroupCardComponent,
+    GradesTableComponent,
+    DsCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,8 @@ import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-
     NgChartsModule,
     HttpClientModule,
     FormsModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

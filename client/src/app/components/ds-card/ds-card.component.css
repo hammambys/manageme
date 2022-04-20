@@ -29,4 +29,6 @@
   .class-footer a {
     color: var(--primary);
   }
-  
+  .toggle-button {
+    margin-bottom :40px;
+  }

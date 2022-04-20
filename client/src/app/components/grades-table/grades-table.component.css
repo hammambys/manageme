@@ -1,0 +1,12 @@
+.full-width-table {
+  width: 100%;
+  
+}
+.grade-table{
+  width: 80%;
+  margin: 20px ; 
+}
+.table-cell{
+  text-align: left;
+  margin :20px auto;
+}
