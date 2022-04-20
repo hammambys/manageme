@@ -1,0 +1,21 @@
+.middle{
+    height: 100vh;
+}
+.mat-grid-tile-content{
+    display: block;
+}
+.example-container {
+    height: 100%;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+
+ .card-msg{
+     height: 100%;
+ }
+ .card-content{
+     height: 100%;
+ }
+ .card-footer{
+    width: 100%;
+}
