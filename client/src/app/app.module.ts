@@ -41,14 +41,11 @@ import { GroupCardComponent } from './components/group-card/group-card.component
 import { GradeTableComponent } from './components/grade-table/grade-table.component';
 import { GradesCardComponent } from './components/grades-card/grades-card.component';
 import { GraphComponent } from './components/graph/graph.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { AllCoursesComponent } from './views/all-courses/all-courses.component';
 
 @NgModule({
   declarations: [
@@ -67,15 +64,12 @@ import { MatButtonModule } from '@angular/material/button';
     RegisterComponent,
     HomeComponent,
     GraphComponent,
-    ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     GroupCardComponent,
     GradeTableComponent,
     GradesCardComponent,
     MiniGroupCardComponent,
     CourseDetailsComponent,
+    AllCoursesComponent,
   ],
   imports: [
     BrowserModule,

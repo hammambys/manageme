@@ -44,8 +44,16 @@ public class User {
     @JsonIgnore
     private Group group;
 
-    @OneToOne(mappedBy = "user")
-    private Student student;
+
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "users")
+    @JsonIgnore
+    private Set<Course> courses = new HashSet<>();
 
 
 
@@ -55,9 +63,9 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
-
-
     }
+
+
     public Long getId() {
         return id;
     }
@@ -95,5 +103,14 @@ public class User {
         this.group = group;
     }
 
+
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 }
 
