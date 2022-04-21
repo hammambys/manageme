@@ -4,12 +4,10 @@
   </div>
   <main class="classes">
     <div class="middle">
-      <h4>Courses List</h4>
-      <ul>
-        <li *ngFor="let course of courses">
-          {{ course.title }}
-        </li>
-      </ul>
+      <app-course-card
+        *ngFor="let course of courses"
+        [courseTitle]="course.title"
+      ></app-course-card>
     </div>
   </main>
   <div class="col">

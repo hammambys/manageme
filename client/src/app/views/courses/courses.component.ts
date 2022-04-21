@@ -3,13 +3,13 @@ import { Course } from 'src/app/models/course.model';
 import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
-  selector: 'app-all-courses',
-  templateUrl: './all-courses.component.html',
-  styleUrls: ['./all-courses.component.css'],
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css'],
 })
-export class AllCoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit {
   courses?: Course[];
-
+  title: string = '';
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {

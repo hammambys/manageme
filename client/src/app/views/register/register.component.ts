@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SELECT_PANEL_INDENT_PADDING_X } from '@angular/material/select/select';
 import { Router } from '@angular/router';
+import { Group } from 'src/app/models/group.model';
+import { GroupService } from 'src/app/_services/group.service';
 import { AuthService } from '../../_services/auth.service';
 
 @Component({
@@ -17,9 +18,17 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService, private router: Router) {}
+  groups: Group[] = [{ id: 1, level: 'master1', name: 'A' }];
+  selectedValue: string = '';
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private groupService: GroupService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.retrieveGroups();
+  }
 
   onSubmit(): void {
     const { username, email, password } = this.form;
@@ -35,6 +44,17 @@ export class RegisterComponent implements OnInit {
       (err) => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
+      }
+    );
+  }
+  retrieveGroups() {
+    this.groupService.getAll().subscribe(
+      (data) => {
+        this.groups = data;
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
       }
     );
   }

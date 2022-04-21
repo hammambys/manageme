@@ -3,8 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.models.Course;
 import com.example.demo.models.CourseMaterial;
-import com.example.demo.models.Group;
-import com.example.demo.models.CourseMaterial;
 import com.example.demo.repository.CourseMaterialRepository;
 import com.example.demo.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

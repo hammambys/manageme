@@ -19,6 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
 
 // Services
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
@@ -27,14 +28,12 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeComponent } from './views/home/home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { ClassComponent } from './views/class/class.component';
 import { ScheduleComponent } from './views/schedule/schedule.component';
 import { GroupsComponent } from './views/groups/groups.component';
 import { MessagesComponent } from './views/messages/messages.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { GradesComponent } from './views/grades/grades.component';
 import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.component';
-import { ClassCardComponent } from './components/class-card/class-card.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { GroupCardComponent } from './components/group-card/group-card.component';
@@ -45,19 +44,19 @@ import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { AllCoursesComponent } from './views/all-courses/all-courses.component';
+import { CoursesComponent } from './views/courses/courses.component';
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     DashboardComponent,
-    ClassComponent,
     MessagesComponent,
     SettingsComponent,
     GradesComponent,
     SidebarRightComponent,
-    ClassCardComponent,
     ScheduleComponent,
     GroupsComponent,
     LoginComponent,
@@ -69,7 +68,9 @@ import { AllCoursesComponent } from './views/all-courses/all-courses.component';
     GradesCardComponent,
     MiniGroupCardComponent,
     CourseDetailsComponent,
-    AllCoursesComponent,
+    CoursesComponent,
+    CourseCardComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +92,7 @@ import { AllCoursesComponent } from './views/all-courses/all-courses.component';
     MatSidenavModule,
     MatSelectModule,
     MatButtonModule,
+    MatInputModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
