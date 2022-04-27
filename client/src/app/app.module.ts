@@ -47,6 +47,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CoursesComponent } from './views/courses/courses.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { AdminComponent } from './views/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     CoursesComponent,
     CourseCardComponent,
     CalendarComponent,
+    ProfileComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

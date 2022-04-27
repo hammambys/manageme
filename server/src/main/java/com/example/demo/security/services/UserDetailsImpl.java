@@ -10,7 +10,6 @@ import com.example.demo.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 public class UserDetailsImpl implements UserDetails {
@@ -18,17 +17,17 @@ public class UserDetailsImpl implements UserDetails {
     private Long id;
     private String username;
     private String email;
-    @JsonIgnore
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
     private Group group;
 
     public UserDetailsImpl(Long id, String username, String email, String password,
-                           Collection<? extends GrantedAuthority> authorities) {
+                           Group group, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.group=group;
         this.authorities = authorities;
     }
     public static UserDetailsImpl build(User user) {
@@ -41,6 +40,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
+                user.getGroup(),
                 authorities);
     }
     @Override

@@ -75,8 +75,11 @@
         <a href="/courses">See all ></a>
       </div>
       <div class="classes-body">
-        <app-course-card></app-course-card>
-        <app-course-card></app-course-card>
+        <app-course-card
+          *ngFor="let course of courses"
+          [courseTitle]="course.title"
+          [nbOfHoursPerWeek]="course.hours_per_week"
+        ></app-course-card>
       </div>
     </section>
     <section class="tasks">

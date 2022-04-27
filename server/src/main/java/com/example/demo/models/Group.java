@@ -3,6 +3,8 @@ package com.example.demo.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,20 +17,22 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "level")
-    private EGroup level;
+    private String level;
 
     @OneToMany(mappedBy = "group",
             cascade = CascadeType.ALL)
     private Set<User> users;
+
+    @ManyToMany(mappedBy = "groups")
+    private Set<Course> courses ;
 
 
 
     public Group() {
     }
 
-    public Group(String name, EGroup level) {
+    public Group(String name, String level) {
         this.name = name;
         this.level = level;
     }
@@ -49,11 +53,11 @@ public class Group {
         this.id = id;
     }
 
-    public EGroup getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(EGroup level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
@@ -65,5 +69,11 @@ public class Group {
         this.users = users;
     }
 
+    public Set<Course> getCourses() {
+        return courses;
+    }
 
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 }

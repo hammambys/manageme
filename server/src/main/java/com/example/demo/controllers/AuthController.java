@@ -64,7 +64,7 @@ public class AuthController {
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles));
+                roles,userDetails.getGroup()));
     }
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
@@ -84,8 +84,8 @@ public class AuthController {
                 encoder.encode(signUpRequest.getPassword()));
 
         // Assign user to his group
-        Long group_id=  signUpRequest.getGroup_id();
-        Optional<Group> group = groupRepository.findById(group_id);
+        String level=  signUpRequest.getLevel();
+        Optional<Group> group = groupRepository.findByLevel(level);
         if(!group.isPresent()){
             throw new RuntimeException("Error: No Group assigned");
         } else {

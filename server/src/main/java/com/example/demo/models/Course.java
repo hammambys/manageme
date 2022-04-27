@@ -2,9 +2,10 @@ package com.example.demo.models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Set;
 
 
@@ -20,29 +21,28 @@ public class Course {
     private String description;
     @Column(name = "published")
     private boolean published;
+    @Column(name = "hours_per_week")
+    private float hours_per_week;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "course_group",
             joinColumns = @JoinColumn(name = "course_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<Group> groups = new ArrayList<>();
-
+    @JsonIgnore
+    private Set<Group> groups;
     @OneToMany(mappedBy = "course")
     private Set<CourseMaterial> courseMaterials;
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "enroll",
-            joinColumns = @JoinColumn(name = "course_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<User> users = new ArrayList<>();
 
     public Course() {
     }
-    public Course(String title, String description, boolean published ) {
+
+    public Course(String title, String description, boolean published , float hours_per_week) {
         this.title = title;
         this.description = description;
         this.published = published;
+        this.hours_per_week=hours_per_week;
     }
 
     public Long getId() {
@@ -77,12 +77,21 @@ public class Course {
         this.published = published;
     }
 
+    public float getHours_per_week() {
+        return hours_per_week;
+    }
 
-    public List<Group> getGroups() {
+    public void setHours_per_week(float hours_per_week) {
+        this.hours_per_week = hours_per_week;
+    }
+
+
+
+    public Set<Group> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<Group> groups) {
+    public void setGroups(Set<Group> groups) {
         this.groups = groups;
     }
 
@@ -94,32 +103,9 @@ public class Course {
         this.courseMaterials = courseMaterials;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
-    public void addUser(User user) {
-        this.users.add(user);
-        user.getCourses().add(this);
-    }
 
-    public void removeUser(long userId) {
-        User user = this.users.stream().filter(t -> t.getId() == userId).findFirst().orElse(null);
-        if (user != null) this.users.remove(user);
-        user.getCourses().remove(this);
-    }
 
-    @Override
-    public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", published=" + published +
-                '}';
-    }
+
 }

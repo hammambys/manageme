@@ -81,20 +81,17 @@
       </div>
       <div class="form-group">
         <label for="group">Choose your group</label>
-        <mat-form-field>
-          <select
-            name="group"
-            id="group"
-            matNativeControl
-            [(ngModel)]="selectedValue"
-          >
-            <option value="" selected></option>
-            <option *ngFor="let group of groups" [value]="group.level">
-              {{ group.level }}
-            </option>
-          </select>
-        </mat-form-field>
-        <p>You selected: {{ selectedValue }}</p>
+        <select
+          name="group"
+          id="group"
+          matNativeControl
+          [(ngModel)]="form.level"
+        >
+          <option *ngFor="let group of groups" [value]="group.level">
+            {{ group.level }}
+          </option>
+        </select>
+        <p>You selected: {{ form.level }}</p>
       </div>
 
       <!--

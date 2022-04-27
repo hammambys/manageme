@@ -14,4 +14,9 @@ export class CourseService {
     console.log(this.http.get<Course[]>(baseUrl));
     return this.http.get<Course[]>(baseUrl);
   }
+
+  /*getAllCoursesOfUser(userId:any): Observable<Course[]> {
+    console.log(this.http.get<Course[]>(`${baseUrl}/${userId}`));
+    return this.http.get<Course[]>(baseUrl);
+  }*/
 }

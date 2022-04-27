@@ -14,7 +14,9 @@
 {
     "title":"course1",
     "description":"course description1",
-    "published":true
+    "published":true,
+    "hours_per_week":8
+    
 }
 
 admin
@@ -35,6 +37,7 @@ modmod
  insert into group_list values(3,"ING_1","A");
  insert into group_list values(4,"ING_2","A");
  insert into group_list values(5,"ING_3","A");
+ insert into group_list values(6,"NO_GROUP","A");
 
 
 

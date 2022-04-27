@@ -35,32 +35,5 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @GetMapping("/groups/{groupId}/users")
-    public ResponseEntity<List<User>> getAllUsersByGroupId(@PathVariable(value = "groupId") Long groupId ) {
-        if (!groupRepository.existsById(groupId)) {
-            throw new ResourceNotFoundException("Not found Group with id = " + groupId);
-        }
-        List<User> users = userRepository.findByGroupId(groupId);
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
-    @PostMapping("/groups/{userId}/{groupId}")
-    public ResponseEntity<User> addUserToGroup(@PathVariable(value = "userId") Long userId,
-                                               @PathVariable(value="groupId") Long groupId
-                                                 ) {
-        Optional<User> user = userRepository.findById(userId);
-        Optional<Group> group = groupRepository.findById(groupId);
-        if(group.isPresent()){
-            Group _group=group.get();
-            if (user.isPresent()) {
-                User _user = user.get();
-                _user.setGroup(_group);
-                return new ResponseEntity<>(userRepository.save(_user), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
 
-    }
 }

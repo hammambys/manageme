@@ -11,14 +11,16 @@ public class JwtResponse {
     private String username;
     private String email;
     private List<String> roles;
+    private Group group;
 
 
-    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+    public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles, Group group) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
         this.roles = roles;
+        this.group=group;
     }
 
     public String getAccessToken() {
@@ -65,5 +67,11 @@ public class JwtResponse {
         return roles;
     }
 
+    public Group getGroup() {
+        return group;
+    }
 
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 }

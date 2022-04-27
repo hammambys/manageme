@@ -1,17 +1,12 @@
 package com.example.demo.controllers;
 
 
-import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.models.Course;
-import com.example.demo.models.CourseMaterial;
 import com.example.demo.models.Group;
-import com.example.demo.models.User;
-import com.example.demo.repository.CourseMaterialRepository;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.GroupRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +21,7 @@ public class CourseController {
     CourseRepository courseRepository;
     @Autowired
     GroupRepository groupRepository;
-    @Autowired
-    UserRepository userRepository;
+
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getAllCourses() {
         try {
@@ -51,14 +45,11 @@ public class CourseController {
         }
     }
 
-
-
-
     @PostMapping("/courses")
     public ResponseEntity<Course> createCourse(@RequestBody Course course) {
         try {
             Course _course = courseRepository
-                    .save(new Course(course.getTitle(), course.getDescription(), course.isPublished()));
+                    .save(new Course(course.getTitle(), course.getDescription(), course.isPublished(),course.getHours_per_week()));
 
             return new ResponseEntity<>(_course, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -112,7 +103,7 @@ public class CourseController {
         }
     }
 
-    @PostMapping("/courses/addgroup/{courseId}/{groupId}")
+    @PostMapping("/courses/{courseId}/addgroup/{groupId}")
     public ResponseEntity<Course> assignGroupToCourse(@PathVariable(value = "courseId") Long courseId,
                                                @PathVariable(value="groupId") Long groupId
     ) {
@@ -122,7 +113,7 @@ public class CourseController {
             Group _group=group.get();
             if (course.isPresent()) {
                 Course _course = course.get();
-                List<Group> groups =  _course.getGroups();
+                Set<Group> groups =  _course.getGroups();
                 groups.add(_group);
                 _course.setGroups(groups);
                 return new ResponseEntity<>(courseRepository.save(_course), HttpStatus.OK);
@@ -134,36 +125,8 @@ public class CourseController {
         }
     }
 
-    @PostMapping("/courses/adduser/{courseId}/{userId}")
-    public ResponseEntity<Course> assignUserToCourse(@PathVariable(value = "courseId") Long courseId,
-                                                      @PathVariable(value="userId") Long userId
-    ) {
-        Optional<Course> course = courseRepository.findById(courseId);
-        Optional<User> user = userRepository.findById(userId);
-        if(user.isPresent()){
-            User _user=user.get();
-            if (course.isPresent()) {
-                Course _course = course.get();
-                List<User> users =  _course.getUsers();
-                users.add(_user);
-                _course.setUsers(users);
-                return new ResponseEntity<>(courseRepository.save(_course), HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
 
 
-    /*@GetMapping("/user/{courseId}/courses")
-    public ResponseEntity<List<Course>> getAllUsersByCourseId(@PathVariable(value = "userId") Long userId) {
-        if (!userRepository.existsById(userId)) {
-            throw new ResourceNotFoundException("Not found User with id = " + userId);
-        }
 
 
-        return new ResponseEntity<>(courses, HttpStatus.OK);
-    }*/
 }
