@@ -11,8 +11,7 @@ public class StudentCourseDetails {
     private Long id;
 
 
-    @OneToOne(mappedBy = "enroll")
-    private Enroll enroll;
+
 
     @Column(name="grade")
     private float grade;
@@ -23,13 +22,7 @@ public class StudentCourseDetails {
     @Column(name="feedback")
     private String feedback;
 
-    public Enroll getEnroll() {
-        return enroll;
-    }
 
-    public void setEnroll(Enroll enroll) {
-        this.enroll = enroll;
-    }
 
     public float getGrade() {
         return grade;

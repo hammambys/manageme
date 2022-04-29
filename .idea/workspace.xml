@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a7db2b14-a307-4d19-8c14-00b723291a44" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/app/_services/course.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/_services/course.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/models/course.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/views/all-courses/all-courses.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/views/all-courses/all-courses.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-admin/board-admin.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/views/all-courses/all-courses.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-admin/board-admin.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-admin/board-admin.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/views/all-courses/all-courses.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-admin/board-admin.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-moderator/board-moderator.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-moderator/board-moderator.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-moderator/board-moderator.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-moderator/board-moderator.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-user/board-user.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-user/board-user.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-user/board-user.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/board-user/board-user.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/profile/profile.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/profile/profile.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/profile/profile.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/profile/profile.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/AssignmentSubmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/AssignmentSubmission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Enroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Enroll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/EnrollId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/StudentCourseDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/StudentCourseDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/repository/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/repository/EnrollRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/demo/repository/EnrollRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/demo/repository/StudentRepository.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="283mZpoFNk5C3eqc9mFepkEf21Q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/benamor/github/manageme/server"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7db2b14-a307-4d19-8c14-00b723291a44" name="Changes" comment="" />
+      <created>1650453701921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650453701921</updated>
+      <workItem from="1650453707905" duration="60000" />
+    </task>
+    <servers />
+  </component>
+</project>

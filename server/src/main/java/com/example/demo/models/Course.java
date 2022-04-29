@@ -31,6 +31,11 @@ public class Course {
     private Set<CourseMaterial> courseMaterials;
 
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "enroll",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> users = new ArrayList<>();
 
     public Course() {
     }
@@ -87,6 +92,25 @@ public class Course {
 
     public void setCourseMaterials(Set<CourseMaterial> courseMaterials) {
         this.courseMaterials = courseMaterials;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public void addUser(User user) {
+        this.users.add(user);
+        user.getCourses().add(this);
+    }
+
+    public void removeUser(long userId) {
+        User user = this.users.stream().filter(t -> t.getId() == userId).findFirst().orElse(null);
+        if (user != null) this.users.remove(user);
+        user.getCourses().remove(this);
     }
 
     @Override

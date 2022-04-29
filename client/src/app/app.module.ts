@@ -41,16 +41,13 @@ import { GroupCardComponent } from './components/group-card/group-card.component
 import { GradeTableComponent } from './components/grade-table/grade-table.component';
 import { GradesCardComponent } from './components/grades-card/grades-card.component';
 import { GraphComponent } from './components/graph/graph.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { Group2Component } from './views/group2/group2.component';
 import { Group1Component } from './views/group1/group1.component';
+import { AllCoursesComponent } from './views/all-courses/all-courses.component';
 
 @NgModule({
   declarations: [
@@ -70,10 +67,6 @@ import { Group1Component } from './views/group1/group1.component';
     RegisterComponent,
     HomeComponent,
     GraphComponent,
-    ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     GroupCardComponent,
     GradeTableComponent,
     GradesCardComponent,
@@ -81,6 +74,7 @@ import { Group1Component } from './views/group1/group1.component';
     CourseDetailsComponent,
     Group2Component,
     Group1Component,
+    AllCoursesComponent,
   ],
   imports: [
     BrowserModule,

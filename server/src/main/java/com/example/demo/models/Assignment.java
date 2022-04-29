@@ -23,6 +23,7 @@ public class Assignment {
     private LocalDateTime deadline;
 
     @Column(name="attached_files")
+    @ElementCollection(targetClass=String.class)
     private Set<String> attached_files;
 
     public Course getCourse() {
