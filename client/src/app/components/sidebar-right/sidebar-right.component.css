@@ -27,6 +27,7 @@ main {
   border-radius: 2rem;
   border: none;
   background-color: #fff;
+  background-image: url("../../../assets/images/icons/profil.png");
 }
 .element button img {
   padding: 5px;
@@ -42,4 +43,25 @@ main {
 
 .btn-profil{
   display: flex;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  background-color: rgb(218, 155, 155);
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.hidden {
+  display: none;
 }

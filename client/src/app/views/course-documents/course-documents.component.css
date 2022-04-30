@@ -1,0 +1,21 @@
+.list-item a {
+  margin-bottom: 2px;
+  padding: 15px;
+  border-radius: 10px;
+}
+.active {
+  background-color: #ebb6a8;
+  border-left: 4px solid var(--primary);
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.list-item:hover {
+  background-color: #ebb6a8;
+  border-radius: 10px;
+}
+.list-item a {
+  display: flex;
+}
+.list-item a .list-icon {
+  margin-right: 1rem;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
@@ -8,16 +9,23 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 export class SidebarRightComponent implements OnInit {
   username?: string;
-  hidden = false;
+  profil_dropdown_open = false;
 
-  toggleBadgeVisibility() {
-    this.hidden = !this.hidden;
-  }
-
-  constructor(private tokenStorageService: TokenStorageService) {}
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     const user = this.tokenStorageService.getUser();
     this.username = user.username;
+  }
+
+  toggleProfilDropdown() {
+    this.profil_dropdown_open = !this.profil_dropdown_open;
+  }
+  logout(): void {
+    this.tokenStorageService.signOut();
+    this.router.navigate(['/home']);
   }
 }

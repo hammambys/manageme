@@ -1,3 +1,53 @@
 .header{
     display: flex;
 }
+.header img{
+width: 32px;
+padding: 10px;
+}
+section{
+    border: 2px solid black;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.chapter-head{
+    display: flex;
+    justify-content: space-between;
+}
+.chapter-body{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    padding:3rem
+}
+.right{
+    padding: 2rem;
+}
+
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .list a {
+    padding: 12px 16px;
+    display: block;
+    color: #fff;
+  }
+  .list a:hover {
+    background-color: rgb(158, 152, 152);
+  }

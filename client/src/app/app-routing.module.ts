@@ -11,6 +11,9 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { CoursesComponent } from './views/courses/courses.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { CourseVideosComponent } from './views/course-videos/course-videos.component';
+import { CourseDocumentsComponent } from './views/course-documents/course-documents.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +27,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'course/:id', component: CourseDetailsComponent },
+  { path: 'course/:id/videos/:id_vid', component: CourseVideosComponent },
+  { path: 'course/:id/documents/:id_doc', component: CourseDocumentsComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

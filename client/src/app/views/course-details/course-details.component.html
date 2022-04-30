@@ -5,93 +5,94 @@
   <main class="middle">
     <div class="container">
       <div class="header">
-        <img src="../../../assets/images/pc.png" alt="" />
         <h1>Course Title</h1>
       </div>
       <div class="body">
-        <div class="general">
-          <h2>General</h2>
-          <div class="description">
-            This course is organized in 5 parts:
-            <ul>
-              <li>Part 1 : IoT solution architectures and components</li>
-            </ul>
-            <ul>
-              <li>Part 1 : IoT solution architectures and components</li>
-            </ul>
-            <ul>
-              <li>Part 1 : IoT solution architectures and components</li>
-            </ul>
+        <section>
+          <h2>Instructor's Note</h2>
+          <div class="header">
+            <img src="../../../assets/images/icons/profil.png" alt="" />
+            <p>Instructor name</p>
           </div>
-        </div>
-        <div class="chapter">
-          <div class="chapter-head">
-            <h2>Chapter 1</h2>
+          <div class="note">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+            qui ducimus quis ex iste placeat eos! Mollitia quas minus itaque
+            aliquid corrupti. Sed aspernatur consequatur error natus! Cum,
+            adipisci hic.
           </div>
-          <div class="chapter-body">
-            <ul class="chapter-item-list">
-              <li class="chapter-item">
-                <div>
-                  <a href=""
-                    ><img
-                      src="../../../assets/images/icons/pdf.png"
-                      alt="img"
-                    />Document 1</a
+        </section>
+        <section>
+          <div class="chapter">
+            <div class="chapter-head">
+              <h2>Chapter 1</h2>
+              <p>Estimated Time: 6h 22m</p>
+            </div>
+            <div class="chapter-body">
+              <div class="left">
+                <div class="list">
+                  <mat-expansion-panel
+                    (opened)="panelOpenStateVideos = true"
+                    (closed)="panelOpenStateVideos = false"
                   >
-                </div>
-                <p>description</p>
-              </li>
-              <li class="chapter-item">
-                <div>
-                  <img src="../../../assets/images/icons/pdf.png" alt="img" />
-                  <a href="">Document 1</a>
-                </div>
-                <p>description</p>
-              </li>
-              <li class="chapter-item">
-                <div>
-                  <img src="../../../assets/images/icons/pdf.png" alt="img" />
-                  <a href="">Document 1</a>
-                </div>
-                <p>description</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="chapter">
-          <div class="chapter-head">
-            <h2>Chapter 1</h2>
-          </div>
-          <div class="chapter-body">
-            <ul class="chapter-item-list">
-              <li class="chapter-item">
-                <div>
-                  <a href=""
-                    ><img
-                      src="../../../assets/images/icons/pdf.png"
-                      alt="img"
-                    />Document 1</a
+                    <mat-expansion-panel-header>
+                      <mat-panel-title> Videos</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a routerLink="/course/1/videos/1">video 1</a>
+                    <a routerLink="/course/1/videos/1">video 1</a>
+                    <a routerLink="/course/1/videos/1">video 1</a>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel
+                    (opened)="panelOpenStateDocs = true"
+                    (closed)="panelOpenStateDocs = false"
                   >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title> Documents</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <a routerLink="/course/1/documents/1">Doc 1</a>
+                    <a routerLink="/course/1/documents/1">Doc 1</a>
+
+                    <a routerLink="/course/1/documents/1">Doc 1</a>
+                  </mat-expansion-panel>
                 </div>
-                <p>description</p>
-              </li>
-              <li class="chapter-item">
-                <div>
-                  <img src="../../../assets/images/icons/pdf.png" alt="img" />
-                  <a href="">Document 1</a>
-                </div>
-                <p>description</p>
-              </li>
-              <li class="chapter-item">
-                <div>
-                  <img src="../../../assets/images/icons/pdf.png" alt="img" />
-                  <a href="">Document 1</a>
-                </div>
-                <p>description</p>
-              </li>
-            </ul>
+              </div>
+              <div class="right">
+                <table
+                  mat-table
+                  [dataSource]="dataSource"
+                  class="mat-elevation-z8 demo-table"
+                >
+                  <ng-container matColumnDef="required">
+                    <th mat-header-cell *matHeaderCellDef>required</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.required }}
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="grade">
+                    <th mat-header-cell *matHeaderCellDef>Grade</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.grade }}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="due">
+                    <th mat-header-cell *matHeaderCellDef>Due</th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.due }}
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr
+                    mat-row
+                    (click)="clickedRows.add(row)"
+                    [class.demo-row-is-clicked]="clickedRows.has(row)"
+                    *matRowDef="let row; columns: displayedColumns"
+                  ></tr>
+                </table>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </main>

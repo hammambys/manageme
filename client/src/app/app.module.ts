@@ -20,7 +20,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
-
 // Services
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
@@ -49,6 +48,8 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { CourseVideosComponent } from './views/course-videos/course-videos.component';
+import { CourseDocumentsComponent } from './views/course-documents/course-documents.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,8 @@ import { AdminComponent } from './views/admin/admin.component';
     CalendarComponent,
     ProfileComponent,
     AdminComponent,
+    CourseVideosComponent,
+    CourseDocumentsComponent,
   ],
   imports: [
     BrowserModule,

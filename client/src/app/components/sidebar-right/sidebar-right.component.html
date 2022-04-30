@@ -14,11 +14,16 @@
         <img src="../../../assets/images/icons/notification.png" alt="" />
       </button>
     </div>
-    <div class="element profil">
-      <button class="btn-profil">
-        <img src="../../../assets/images/icons/profil.png" alt="picture" />
-        <p>{{ username }}</p>
+    <div class="dropdown">
+      <button (click)="toggleProfilDropdown()">
+        <img src="../../../assets/images/icons/profil.png" alt="" />
+        {{ username }}test
       </button>
+      <div [ngClass]="profil_dropdown_open ? 'dropdown-content' : 'hidden'">
+        <a href="/courses">My courses</a>
+        <a href="/profile">Profile</a>
+        <a href (click)="logout()">Log out</a>
+      </div>
     </div>
   </div>
   <section class="calendar-section">
