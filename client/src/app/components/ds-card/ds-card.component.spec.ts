@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GradeTableComponent } from './grade-table.component';
+import { DSCardComponent } from './ds-card.component';
 
-describe('GradeTableComponent', () => {
-  let component: GradeTableComponent;
-  let fixture: ComponentFixture<GradeTableComponent>;
+describe('DSCardComponent', () => {
+  let component: DSCardComponent;
+  let fixture: ComponentFixture<DSCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GradeTableComponent ]
+      declarations: [ DSCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GradeTableComponent);
+    fixture = TestBed.createComponent(DSCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

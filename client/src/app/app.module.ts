@@ -36,8 +36,8 @@ import { SidebarRightComponent } from './components/sidebar-right/sidebar-right.
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { GroupCardComponent } from './components/group-card/group-card.component';
-import { GradeTableComponent } from './components/grade-table/grade-table.component';
 import { GradesCardComponent } from './components/grades-card/grades-card.component';
+import { GradesTableComponent } from './components/grades-table/grades-table.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
@@ -50,6 +50,8 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { CourseVideosComponent } from './views/course-videos/course-videos.component';
 import { CourseDocumentsComponent } from './views/course-documents/course-documents.component';
+import { MatSortModule } from '@angular/material/sort';
+import { DSCardComponent } from './components/ds-card/ds-card.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,7 @@ import { CourseDocumentsComponent } from './views/course-documents/course-docume
     HomeComponent,
     GraphComponent,
     GroupCardComponent,
-    GradeTableComponent,
+    GradesTableComponent,
     GradesCardComponent,
     MiniGroupCardComponent,
     CourseDetailsComponent,
@@ -78,6 +80,7 @@ import { CourseDocumentsComponent } from './views/course-documents/course-docume
     AdminComponent,
     CourseVideosComponent,
     CourseDocumentsComponent,
+    DSCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +103,7 @@ import { CourseDocumentsComponent } from './views/course-documents/course-docume
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
+    MatSortModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
