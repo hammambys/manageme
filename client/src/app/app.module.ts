@@ -40,6 +40,7 @@ import { GradesCardComponent } from './components/grades-card/grades-card.compon
 import { GradesTableComponent } from './components/grades-table/grades-table.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { MiniGroupCardComponent } from './components/mini-group-card/mini-group-card.component';
+import { MatSortModule } from '@angular/material/sort';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -50,7 +51,6 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { CourseVideosComponent } from './views/course-videos/course-videos.component';
 import { CourseDocumentsComponent } from './views/course-documents/course-documents.component';
-import { MatSortModule } from '@angular/material/sort';
 import { DSCardComponent } from './components/ds-card/ds-card.component';
 
 @NgModule({
@@ -72,6 +72,8 @@ import { DSCardComponent } from './components/ds-card/ds-card.component';
     GradesTableComponent,
     GradesCardComponent,
     MiniGroupCardComponent,
+    GradesTableComponent,
+    DSCardComponent,
     CourseDetailsComponent,
     CoursesComponent,
     CourseCardComponent,
@@ -95,6 +97,11 @@ import { DSCardComponent } from './components/ds-card/ds-card.component';
     MatIconModule,
     MatMenuModule,
     MatTableModule,
+    NgChartsModule,
+    HttpClientModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatPaginatorModule,
     MatExpansionModule,
     MatListModule,
