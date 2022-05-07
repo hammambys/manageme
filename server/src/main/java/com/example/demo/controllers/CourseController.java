@@ -2,10 +2,10 @@ package com.example.demo.controllers;
 
 
 import com.example.demo.models.Course;
+import com.example.demo.models.CourseChapter;
 import com.example.demo.models.Group;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.GroupRepository;
-import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +21,8 @@ public class CourseController {
     CourseRepository courseRepository;
     @Autowired
     GroupRepository groupRepository;
+    @Autowired
+    CourseChapterRepository courseChapterRepository;
 
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getAllCourses() {
@@ -48,8 +50,7 @@ public class CourseController {
     @PostMapping("/courses")
     public ResponseEntity<Course> createCourse(@RequestBody Course course) {
         try {
-            Course _course = courseRepository
-                    .save(new Course(course.getTitle(), course.getDescription(), course.isPublished(),course.getHours_per_week()));
+            Course _course = new Course(course.getTitle(), course.getDescription(), course.isPublished(),course.getHours_per_week());
 
             return new ResponseEntity<>(_course, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -124,9 +125,28 @@ public class CourseController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+   /* @PostMapping("/chapters")
+    public ResponseEntity<CourseChapter> createChapter(@RequestBody CourseChapter courseChapter) {
+        try {
+CourseChapter _courseChapter = courseChapterRepository.save(new CourseChapter(courseChapter.getTitle()));
+            return new ResponseEntity<>(_courseChapter, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }*/
 
-
-
-
+    @PostMapping("/courses/{id}/addchapter")
+    public  ResponseEntity<Course> addChapterToCourse(@PathVariable(value = "id") Long courseId,@RequestBody CourseChapter courseChapter){
+        Optional<Course> course = courseRepository.findById(courseId);
+        if (course.isPresent()) {
+            Course _course = course.get();
+            Set<CourseChapter> courseChapters =  _course.getCourseChapters();
+            courseChapters.add(courseChapter);
+            _course.setCourseChapters(courseChapters);
+            return new ResponseEntity<>(courseRepository.save(_course), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
 }

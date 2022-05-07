@@ -16,8 +16,12 @@
     "description":"course description1",
     "published":true,
     "hours_per_week":8
-    
 }
+
+{
+"title":"chapter1"
+}
+
 
 admin
 admin@gmail.com

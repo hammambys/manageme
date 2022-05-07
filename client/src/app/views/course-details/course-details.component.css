@@ -18,36 +18,15 @@ section{
     display: flex;
     justify-content: center;
 }
-.left{
-    padding:3rem
-}
-.right{
-    padding: 2rem;
-}
-
-.demo-table {
-    width: 100%;
+  .list-item{
+    margin: 2rem;
   }
-  
-  .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    cursor: pointer;
+  .mat-line,.mat-list-icon{
+color: black;
   }
-  
-  .mat-row:hover .mat-cell {
-    border-color: currentColor;
+  a{
+    display: flex;
   }
-  
-  .demo-row-is-clicked {
-    font-weight: bold;
-  }
-
-  .list a {
-    padding: 12px 16px;
-    display: block;
-    color: #fff;
-  }
-  .list a:hover {
-    background-color: rgb(158, 152, 152);
+  a:hover{
+    background-color: #fff;
   }

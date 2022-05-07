@@ -1,14 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  required: string;
-  grade: number;
-  due: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { required: 'quiz', grade: 11, due: '12/03/2000' },
-];
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/models/course.model';
+import { CourseMat } from 'src/app/models/courseMat.model';
+import { CourseService } from 'src/app/_services/course.service';
 
 @Component({
   selector: 'app-course-details',
@@ -16,14 +10,75 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./course-details.component.css'],
 })
 export class CourseDetailsComponent implements OnInit {
-  displayedColumns: string[] = ['required', 'grade', 'due'];
+  docs: CourseMat[] = [
+    {
+      id: 1,
+      name: 'doc 1',
+      description: 'description 1',
+      isVideo: false,
+      link: '#',
+    },
+    {
+      id: 2,
+      name: 'video 1',
+      description: 'description 1',
+      isVideo: true,
+      link: '#',
+    },
+    {
+      id: 3,
+      name: 'doc 2',
+      description: 'description 2',
+      isVideo: false,
+      link: '#',
+    },
+  ];
+  message = '';
+  currentCourse: Course = {
+    title: '',
+    description: '',
+    published: false,
+    hours_per_week: 8,
+    groups: [],
+  };
+  viewMode = true;
 
-  dataSource = ELEMENT_DATA;
-  clickedRows = new Set<PeriodicElement>();
-  panelOpenStateVideos = false;
-  panelOpenStateDocs = false;
+  constructor(
+    private courseService: CourseService,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.message = '';
+    this.getCourse(this.route.snapshot.params['id']);
+  }
 
-  ngOnInit(): void {}
+  getCourse(id: string): void {
+    this.courseService.get(id).subscribe({
+      next: (data) => {
+        this.currentCourse = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
+  }
+
+  updateCourse(): void {
+    this.message = '';
+
+    this.courseService
+      .update(this.currentCourse.id, this.currentCourse)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.message = res.message
+            ? res.message
+            : 'This course was updated successfully!';
+        },
+        error: (e) => console.error(e),
+      });
+  }
+  activateEdit(): void {
+    this.viewMode = false;
+  }
 }

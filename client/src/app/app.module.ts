@@ -48,8 +48,7 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { AdminComponent } from './views/admin/admin.component';
-import { CourseVideosComponent } from './views/course-videos/course-videos.component';
-import { CourseDocumentsComponent } from './views/course-documents/course-documents.component';
+import { CourseEditComponent } from './views/course-edit/course-edit.component';
 
 @NgModule({
   declarations: [
@@ -76,8 +75,7 @@ import { CourseDocumentsComponent } from './views/course-documents/course-docume
     CalendarComponent,
     ProfileComponent,
     AdminComponent,
-    CourseVideosComponent,
-    CourseDocumentsComponent,
+    CourseEditComponent,
   ],
   imports: [
     BrowserModule,

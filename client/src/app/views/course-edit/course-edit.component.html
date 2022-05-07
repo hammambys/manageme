@@ -1,0 +1,71 @@
+<!--<div class="main-app">
+  <div class="col">
+    <app-sidebar></app-sidebar>
+  </div>
+  <main class="middle">
+    <div class="container">
+      <form>
+        <form>
+          <div class="header">
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              [(ngModel)]="currentTutorial.title"
+              name="title"
+            />
+          </div>
+          <div class="body">
+            <section>
+              <h2>Instructor's Note</h2>
+              <div class="header">
+                <img src="../../../assets/images/icons/profil.png" alt="" />
+                <p>Instructor name</p>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="note"
+                [(ngModel)]="currentCourse.note"
+                name="note"
+              />
+            </section>
+            <section>
+              <div class="chapter">
+                <div class="chapter-head">
+                  <h2>Chapter 1</h2>
+                  <p>Estimated Time: 6h 22m</p>
+                </div>
+                <div class="chapter-body">
+                  <div>
+                    <mat-list class="list">
+                      <mat-list-item class="list-item" *ngFor="let doc of docs">
+                        <a href="{{ doc.link }}">
+                          <mat-icon *ngIf="doc.isVideo" mat-list-icon
+                            >movie</mat-icon
+                          >
+
+                          <mat-icon *ngIf="!doc.isVideo" mat-list-icon
+                            >description</mat-icon
+                          >
+                          <div>
+                            <h3>{{ doc.name }}</h3>
+                            <div mat-line>{{ doc.description }}</div>
+                          </div>
+                        </a>
+                      </mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </form>
+      </form>
+    </div>
+  </main>
+  <div class="col">
+    <app-sidebar-right></app-sidebar-right>
+  </div>
+</div>
+-->

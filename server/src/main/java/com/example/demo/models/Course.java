@@ -31,7 +31,8 @@ public class Course {
     @JsonIgnore
     private Set<Group> groups;
     @OneToMany(mappedBy = "course")
-    private Set<CourseMaterial> courseMaterials;
+    private Set<CourseChapter> chapters;
+
 
 
 
@@ -85,8 +86,6 @@ public class Course {
         this.hours_per_week = hours_per_week;
     }
 
-
-
     public Set<Group> getGroups() {
         return groups;
     }
@@ -95,17 +94,12 @@ public class Course {
         this.groups = groups;
     }
 
-    public Set<CourseMaterial> getCourseMaterials() {
-        return courseMaterials;
+
+    public Set<CourseChapter> getCourseChapters() {
+        return chapters;
     }
 
-    public void setCourseMaterials(Set<CourseMaterial> courseMaterials) {
-        this.courseMaterials = courseMaterials;
+    public void setCourseChapters(Set<CourseChapter> chapters) {
+        this.chapters = chapters;
     }
-
-
-
-
-
-
 }

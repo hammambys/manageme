@@ -4,7 +4,6 @@ package com.example.demo.models;
 import javax.persistence.*;
 
 @Entity
-@Table(	name = "material")
 public class CourseMaterial {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,11 +12,11 @@ public class CourseMaterial {
     private String link;
     @Column(name = "type")
     private String type;
+    @Column(name="isVideo")
+    private boolean isVideo;
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
-
-
+    @JoinColumn(name = "chapter")
+    private CourseChapter courseChapter;
 
     public CourseMaterial(String link, String type) {
         this.link = link;
@@ -40,11 +39,19 @@ public class CourseMaterial {
         this.type = type;
     }
 
-    public Course getCourse() {
-        return course;
+    public boolean isVideo() {
+        return isVideo;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setVideo(boolean video) {
+        isVideo = video;
+    }
+
+    public CourseChapter getCourseChapter() {
+        return courseChapter;
+    }
+
+    public void setCourseChapter(CourseChapter courseChapter) {
+        this.courseChapter = courseChapter;
     }
 }
