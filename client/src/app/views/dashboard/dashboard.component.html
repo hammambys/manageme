@@ -69,21 +69,20 @@
         </div>
       </div>
     </section>
-    <section class="classes">
-      <div class="classes-head">
+    <section class="courses">
+      <div class="section-head">
         <h2>My Classes</h2>
         <a href="/courses">See all ></a>
       </div>
-      <div class="classes-body">
+      <div class="course-body">
         <app-course-card
           *ngFor="let course of courses"
-          [courseTitle]="course.title"
-          [nbOfHoursPerWeek]="course.hours_per_week"
+          [course]="course"
         ></app-course-card>
       </div>
     </section>
     <section class="tasks">
-      <div class="tasks-head">
+      <div class="section-head">
         <h2>Today Tasks</h2>
         <div class="results gray-text">3 results</div>
       </div>

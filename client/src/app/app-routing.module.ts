@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'course/:id', component: CourseDetailsComponent },
+  { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

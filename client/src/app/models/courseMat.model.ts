@@ -1,7 +1,7 @@
 export class CourseMat {
   id?: any;
-  name?: string;
+  name: string = '';
   description?: string;
   isVideo?: boolean;
-  link?: string;
+  link: string = '#';
 }

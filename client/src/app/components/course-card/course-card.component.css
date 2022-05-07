@@ -19,10 +19,13 @@
   .course-body {
     display: grid;
     grid-template-columns: auto auto;
-    color: gray;
     font-weight: 400;
     padding-top: 1rem;
     border-top: 1px solid gray;
+  }
+  .course-body p{
+    color: gray;
+
   }
   .course-footer {
     padding: 1rem;

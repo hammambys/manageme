@@ -11,8 +11,17 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   styleUrls: ['./courses.component.css'],
 })
 export class CoursesComponent implements OnInit {
-  courses?: Course[];
-  title: string = '';
+  courses?: Course[] = [
+    {
+      id: 1,
+      title: 'test',
+      description: 'test description',
+      published: true,
+      hours_per_week: 2,
+      groups: [{ name: 'master1' }, { name: 'ing2' }],
+      materials: [],
+    },
+  ];
   currentUser?: User;
   constructor(
     private courseService: CourseService,
@@ -23,7 +32,7 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     const user = this.tokenStorageService.getUser();
     this.currentUser = user;
-    this.retrieveCoursesOfUser();
+    //this.retrieveCoursesOfUser();
   }
 
   retrieveCoursesOfUser(): void {

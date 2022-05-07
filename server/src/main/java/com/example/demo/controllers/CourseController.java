@@ -21,8 +21,7 @@ public class CourseController {
     CourseRepository courseRepository;
     @Autowired
     GroupRepository groupRepository;
-    @Autowired
-    CourseChapterRepository courseChapterRepository;
+
 
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getAllCourses() {

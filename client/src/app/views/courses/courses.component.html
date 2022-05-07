@@ -2,14 +2,11 @@
   <div class="col">
     <app-sidebar></app-sidebar>
   </div>
-  <main class="classes">
-    <div class="middle">
-      <app-course-card
-        *ngFor="let course of courses"
-        [courseTitle]="course.title"
-        [nbOfHoursPerWeek]="course.hours_per_week"
-      ></app-course-card>
-    </div>
+  <main class="middle">
+    <app-course-card
+      *ngFor="let course of courses"
+      [course]="course"
+    ></app-course-card>
   </main>
   <div class="col">
     <app-sidebar-right></app-sidebar-right>

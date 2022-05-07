@@ -4,8 +4,7 @@
       <img src="../../../assets/images/pc.png" alt="course image" />
     </div>
     <div>
-      <h3>{{ courseTitle }}</h3>
-      <p class="gray-text">Instructeur 1</p>
+      <h3>{{ course.title }}</h3>
     </div>
     <div class="menu">
       <button
@@ -17,27 +16,25 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/courses/{{ course.id }}">
+          <span>Edit</span>
+        </a>
         <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voice mail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
+          <span>Unpublish</span>
         </button>
       </mat-menu>
     </div>
   </div>
 
   <div class="course-body">
-    <p class="gray-text">{{ courseLevel }}</p>
-    <p class="gray-text">{{ nbOfHoursPerWeek }} Hours/Week</p>
+    <div>
+      <h3>Levels</h3>
+      <hr />
+      <p class="gray-text" *ngFor="let level of courseLevels">{{ level }}</p>
+    </div>
+    <p class="gray-text">{{ course.hours_per_week }} Hours/Week</p>
   </div>
   <div class="course-footer">
-    <a href="/course/1">View course</a>
+    <a href="/courses/{{ course.id }}">View course</a>
   </div>
 </div>

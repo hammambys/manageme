@@ -5,28 +5,28 @@
 width: 32px;
 padding: 10px;
 }
+a{
+  display: flex;
+}
+a:hover{
+  background-color: #fff;
+  cursor:pointer
+}
 section{
     border: 2px solid black;
     padding: 1rem;
     margin-bottom: 2rem;
 }
-.chapter-head{
-    display: flex;
-    justify-content: space-between;
+.content-head{
+  text-align: center;
 }
-.chapter-body{
-    display: flex;
+.content-body{
     justify-content: center;
 }
-  .list-item{
-    margin: 2rem;
-  }
+  
   .mat-line,.mat-list-icon{
 color: black;
   }
-  a{
+  .videos{
     display: flex;
-  }
-  a:hover{
-    background-color: #fff;
   }

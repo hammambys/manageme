@@ -4,7 +4,7 @@ import { User } from './user.model';
 export class Group {
   id?: any;
   level?: string;
-  name?: string;
+  name: string = '';
   users?: User[];
   courses?: Course[];
 }

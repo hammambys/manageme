@@ -46,30 +46,18 @@ section {
   padding-left: 1rem;
 }
 
-.classes-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.classes-head a {
-  color: var(--primary);
-}
 
-.classes-body {
-  display: flex;
-  justify-content: space-around;
-}
 
-.tasks-head {
+.section-head {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-.tasks-head h2 {
+.section-head h2 {
   margin: 0;
   margin-right: 1rem;
 }
-.tasks-head .results {
+.section-head .results {
   text-align: center;
 }
 .task {

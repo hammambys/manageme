@@ -20,8 +20,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
-// Services
+
+// helpers
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { SafePipe } from './_helpers/safe.pipe';
 
 // Components
 import { HomeComponent } from './views/home/home.component';
@@ -76,6 +78,7 @@ import { CourseEditComponent } from './views/course-edit/course-edit.component';
     ProfileComponent,
     AdminComponent,
     CourseEditComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

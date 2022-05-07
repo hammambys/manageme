@@ -5,45 +5,69 @@
   <main class="middle">
     <div class="container" *ngIf="viewMode; else editable">
       <div class="header">
-        <h1>Course Title</h1>
+        <h1>{{ currentCourse.title }}</h1>
         <button (click)="activateEdit()">edit</button>
       </div>
       <div class="body">
         <section>
-          <h2>Instructor's Note</h2>
-          <div class="header">
-            <img src="../../../assets/images/icons/profil.png" alt="" />
-            <p>Instructor name</p>
-            <a routerLink="/admin/profil">edit profil</a>
-          </div>
-          <div class="note">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            qui ducimus quis ex iste placeat eos! Mollitia quas minus itaque
-            aliquid corrupti. Sed aspernatur consequatur error natus! Cum,
-            adipisci hic.
+          <h2>Course description</h2>
+          <div>
+            {{ currentCourse.description }}
           </div>
         </section>
         <section>
-          <div class="chapter">
-            <div class="chapter-head">
-              <h2>Chapter 1</h2>
-              <p>Estimated Time: 6h 22m</p>
+          <div class="content">
+            <div class="content-head">
+              <h2>Course content</h2>
             </div>
-            <div class="chapter-body">
-              <div>
-                <mat-list class="list">
-                  <mat-list-item class="list-item" *ngFor="let doc of docs">
-                    <a href="{{ doc.link }}">
-                      <mat-icon *ngIf="doc.isVideo" mat-list-icon
-                        >movie</mat-icon
+            <div class="content-body">
+              <h2>Videos</h2>
+              <div class="videos">
+                <div class="left">
+                  <mat-list class="list">
+                    <mat-list-item
+                      class="list-item"
+                      *ngFor="let material of currentCourse.materials"
+                    >
+                      <a
+                        *ngIf="material.isVideo"
+                        (click)="openVideo(material.id)"
                       >
+                        <mat-icon *ngIf="material.isVideo" mat-list-icon
+                          >movie</mat-icon
+                        >
 
-                      <mat-icon *ngIf="!doc.isVideo" mat-list-icon
-                        >description</mat-icon
-                      >
+                        <div>
+                          <h3>{{ material.name }}</h3>
+                          <div mat-line>{{ material.description }}</div>
+                        </div>
+                      </a>
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+                <div class="right">
+                  <iframe
+                    width="550"
+                    height="400"
+                    [src]="
+                      'https://www.youtube.com/embed/' + openedVideo.link | safe
+                    "
+                  >
+                  </iframe>
+                </div>
+              </div>
+              <h2>Documents</h2>
+              <div class="documents">
+                <mat-list class="list">
+                  <mat-list-item
+                    class="list-item"
+                    *ngFor="let material of currentCourse.materials"
+                  >
+                    <a href *ngIf="!material.isVideo">
+                      <mat-icon mat-list-icon>description</mat-icon>
                       <div>
-                        <h3>{{ doc.name }}</h3>
-                        <div mat-line>{{ doc.description }}</div>
+                        <h3>{{ material.name }}</h3>
+                        <div mat-line>{{ material.description }}</div>
                       </div>
                     </a>
                   </mat-list-item>
@@ -55,62 +79,60 @@
       </div>
     </div>
     <ng-template #editable>
-      <!--<form>
+      <form>
         <div class="header">
           <input
             type="text"
-            class="form-control"
             id="title"
-            [(ngModel)]="currentTutorial.title"
+            [(ngModel)]="currentCourse.title"
             name="title"
           />
         </div>
         <div class="body">
           <section>
-            <h2>Instructor's Note</h2>
-            <div class="header">
-              <img src="../../../assets/images/icons/profil.png" alt="" />
-              <p>Instructor name</p>
-            </div>
+            <h2>Course description</h2>
+
             <input
               type="text"
-              class="form-control"
-              id="note"
-              [(ngModel)]="currentCourse.note"
-              name="note"
+              id="description"
+              [(ngModel)]="currentCourse.description"
+              name="description"
             />
           </section>
           <section>
-            <div class="chapter">
-              <div class="chapter-head">
-                <h2>Chapter 1</h2>
-                <p>Estimated Time: 6h 22m</p>
+            <div class="content">
+              <div class="content-head">
+                <h2>Course content</h2>
               </div>
-              <div class="chapter-body">
+              <div class="content-body">
                 <div>
                   <mat-list class="list">
-                    <mat-list-item class="list-item" *ngFor="let doc of docs">
-                      <a href="{{ doc.link }}">
-                        <mat-icon *ngIf="doc.isVideo" mat-list-icon
+                    <mat-list-item
+                      class="list-item"
+                      *ngFor="let material of currentCourse.materials"
+                    >
+                      <a href="{{ material.link }}">
+                        <mat-icon *ngIf="material.isVideo" mat-list-icon
                           >movie</mat-icon
                         >
-
-                        <mat-icon *ngIf="!doc.isVideo" mat-list-icon
+                        <mat-icon *ngIf="!material.isVideo" mat-list-icon
                           >description</mat-icon
                         >
                         <div>
-                          <h3>{{ doc.name }}</h3>
-                          <div mat-line>{{ doc.description }}</div>
+                          <h3>{{ material.name }}</h3>
+                          <div mat-line>{{ material.description }}</div>
                         </div>
                       </a>
                     </mat-list-item>
                   </mat-list>
+                  <button>Add material</button>
                 </div>
               </div>
             </div>
           </section>
         </div>
-      </form>-->
+        <button (click)="updateCourse()" type="submit">Submit</button>
+      </form>
     </ng-template>
   </main>
   <div class="col">

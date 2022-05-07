@@ -13,12 +13,22 @@ export class DashboardComponent implements OnInit {
   username?: string;
   courses?: Course[] = [
     {
-      id: 0,
-      title: '',
-      description: '',
-      published: false,
-      hours_per_week: 0,
+      id: 1,
+      title: 'test',
+      description: 'test description',
+      published: true,
+      hours_per_week: 2,
       groups: [],
+      materials: [],
+    },
+    {
+      id: 1,
+      title: 'test',
+      description: 'test description',
+      published: true,
+      hours_per_week: 2,
+      groups: [],
+      materials: [],
     },
   ];
   currentUser?: User;
@@ -31,7 +41,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.tokenStorageService.getUser();
     this.username = this.currentUser?.username;
-    this.retrieveTwoCoursesOfUser();
+    //this.retrieveTwoCoursesOfUser();
   }
   retrieveTwoCoursesOfUser(): void {
     const courses = this.currentUser?.group?.courses?.slice(0, 2);
