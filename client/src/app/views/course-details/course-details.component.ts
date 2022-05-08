@@ -1,4 +1,4 @@
-import { Component, OnInit, Pipe } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/models/course.model';
 import { CourseMat } from 'src/app/models/courseMat.model';
@@ -11,6 +11,19 @@ import { CourseService } from 'src/app/_services/course.service';
 })
 export class CourseDetailsComponent implements OnInit {
   message = '';
+  video: CourseMat = {
+    name: '',
+    description: '',
+    isVideo: true,
+    link: '',
+  };
+  document: CourseMat = {
+    name: '',
+    description: '',
+    isVideo: false,
+    link: '',
+  };
+
   currentCourse: Course = {
     id: 1,
     title: 'test',
@@ -55,6 +68,10 @@ export class CourseDetailsComponent implements OnInit {
     name: 'test',
     link: '',
   };
+  enabledVidInput = false;
+  enabledDocInput = false;
+  submittedVid = false;
+  submittedDoc = false;
 
   constructor(
     private courseService: CourseService,
@@ -94,10 +111,52 @@ export class CourseDetailsComponent implements OnInit {
   activateEdit(): void {
     this.viewMode = false;
   }
+  cancelEdit(): void {
+    this.viewMode = true;
+  }
   openVideo(id: any): void {
     const selectedVideo = this.currentCourse.materials.find((e) => e.id == id);
     if (selectedVideo) {
       this.openedVideo = selectedVideo;
     }
+  }
+  toggleVidInput(): void {
+    this.enabledVidInput = !this.enabledVidInput;
+  }
+  toggleDocInput(): void {
+    this.enabledDocInput = !this.enabledDocInput;
+  }
+  saveVideo(): void {
+    const data: CourseMat = {
+      name: this.video.name,
+      description: this.video.description,
+      link: this.video.link,
+      isVideo: true,
+    };
+    if (data) {
+      this.currentCourse.materials.push(data);
+      this.submittedVid = true;
+    }
+  }
+  saveDocument(): void {
+    const data: CourseMat = {
+      name: this.document.name,
+      description: this.document.description,
+      link: this.document.link,
+      isVideo: false,
+    };
+    if (data) {
+      this.currentCourse.materials.push(data);
+      this.submittedDoc = true;
+    }
+  }
+  deleteMaterial(id: any): void {
+    this.currentCourse.materials.splice(
+      this.currentCourse.materials.findIndex((i) => {
+        return i.id === id;
+      }),
+      1
+    );
+    console.log(this.currentCourse);
   }
 }

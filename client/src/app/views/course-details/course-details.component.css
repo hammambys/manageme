@@ -5,7 +5,7 @@
 width: 32px;
 padding: 10px;
 }
-a{
+a{ 
   display: flex;
 }
 a:hover{
@@ -29,4 +29,7 @@ color: black;
   }
   .videos{
     display: flex;
+  }
+  .list{
+    margin-bottom: 1rem;
   }
