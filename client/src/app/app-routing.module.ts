@@ -10,6 +10,7 @@ import { SettingsComponent } from './views/settings/settings.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
+import {CourseEditComponent} from "./views/course-edit/course-edit.component"
 import { CoursesComponent } from './views/courses/courses.component';
 import { ProfileComponent } from './views/profile/profile.component';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'courses/:id', component: CourseDetailsComponent },
+  {path:'courses/:id/edit',component:CourseEditComponent},
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

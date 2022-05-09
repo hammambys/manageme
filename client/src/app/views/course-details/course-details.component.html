@@ -3,10 +3,12 @@
     <app-sidebar></app-sidebar>
   </div>
   <main class="middle">
-    <div class="container" *ngIf="viewMode; else editable">
+    <div class="container">
       <div class="header">
         <h1>{{ currentCourse.title }}</h1>
-        <button (click)="activateEdit()">edit</button>
+        <a class="btn" href="/courses/{{ currentCourse.id }}/edit"
+          >Edit this course</a
+        >
       </div>
       <div class="body">
         <section>
@@ -80,144 +82,6 @@
         </section>
       </div>
     </div>
-    <ng-template #editable>
-      <button (click)="cancelEdit()">Cancel edit</button>
-      <form>
-        <div class="header">
-          <input
-            type="text"
-            id="title"
-            [(ngModel)]="currentCourse.title"
-            name="title"
-          />
-        </div>
-        <div class="body">
-          <section>
-            <h2>Course description</h2>
-            <textarea
-              name="description"
-              [(ngModel)]="currentCourse.description"
-              id="description"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </section>
-          <section>
-            <div class="content">
-              <div class="content-head">
-                <h2>Course content</h2>
-              </div>
-              <div class="content-body">
-                <h2>Videos</h2>
-                <div>
-                  <mat-list class="list">
-                    <div *ngFor="let material of currentCourse.materials">
-                      <mat-list-item class="list-item" *ngIf="material.isVideo">
-                        <a (click)="openVideo(material.id)">
-                          <mat-icon *ngIf="material.isVideo" mat-list-icon
-                            >movie</mat-icon
-                          >
-
-                          <div>
-                            <h3>{{ material.name }}</h3>
-                            <div mat-line>{{ material.description }}</div>
-                          </div>
-                        </a>
-                        <button (click)="deleteMaterial(material.id)">
-                          delete
-                        </button>
-                      </mat-list-item>
-                    </div>
-                  </mat-list>
-                  <form *ngIf="enabledVidInput">
-                    <input
-                      type="text"
-                      [(ngModel)]="video.name"
-                      placeholder="enter video title"
-                      id="vidName"
-                      name="vidName"
-                    />
-                    <textarea
-                      [(ngModel)]="video.description"
-                      placeholder="enter video description"
-                      id="vidTitle"
-                      name="vidTitle"
-                    ></textarea>
-
-                    <input
-                      type="text"
-                      [(ngModel)]="video.link"
-                      placeholder="enter youtube video link"
-                      id="vidLink"
-                      name="vidLink"
-                    />
-                    <button (click)="saveVideo()">Submit</button>
-                    <div *ngIf="submittedVid">
-                      <h4>Video submitted successfully!</h4>
-                    </div>
-                  </form>
-                  <button (click)="toggleVidInput()">Add Video</button>
-                </div>
-                <h2>Documents</h2>
-                <div class="documents">
-                  <mat-list class="list">
-                    <div *ngFor="let material of currentCourse.materials">
-                      <mat-list-item
-                        class="list-item"
-                        *ngIf="!material.isVideo"
-                      >
-                        <a href="{{ material.link }}" target="_blank">
-                          <mat-icon mat-list-icon>description</mat-icon>
-                          <div>
-                            <h3>{{ material.name }}</h3>
-                            <div mat-line>{{ material.description }}</div>
-                          </div>
-                        </a>
-                        <button (click)="deleteMaterial(material.id)">
-                          delete
-                        </button>
-                      </mat-list-item>
-                    </div>
-                  </mat-list>
-                  <form *ngIf="enabledDocInput">
-                    <input
-                      type="text"
-                      [(ngModel)]="document.name"
-                      placeholder="enter document title"
-                      id="docName"
-                      name="docName"
-                      required
-                    />
-                    <textarea
-                      [(ngModel)]="document.description"
-                      placeholder="enter document description"
-                      id="docTitle"
-                      name="docTitle"
-                      required
-                    ></textarea>
-
-                    <input
-                      type="text"
-                      [(ngModel)]="document.link"
-                      placeholder="enter document link"
-                      id="docLink"
-                      name="docLink"
-                      required
-                    />
-                    <button (click)="saveDocument()">Submit</button>
-                  </form>
-                  <button (click)="toggleDocInput()">Add Document</button>
-                  <div *ngIf="submittedDoc">
-                    <h4>Document submitted successfully!</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <button (click)="updateCourse()" type="submit">Submit</button>
-      </form>
-    </ng-template>
   </main>
   <div class="col">
     <app-sidebar-right></app-sidebar-right>
